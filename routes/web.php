@@ -1,6 +1,7 @@
 <?php
 
-use App\Http\Controllers\OrdersController;
+use App\Http\Controllers\Backend\OrderController;
+use App\Http\Controllers\Backend\ProductController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -15,8 +16,15 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('admin.master');
+    return redirect()->route('admin');
 });
 
-Route::get('/admin/orders',[OrdersController::class,'orderList']);
 
+Route::group(['prefix'=>'admin-portal'],function(){
+    Route::get('/', function () {
+        return view('admin.master');
+    })->name('admin');
+    Route::get('/orders',[OrderController::class,'orderList'])->name('admin.orders');
+    Route::get('/products',[ProductController::class,'productList'])->name('admin.products');
+    Route::get('/products/create',[ProductController::class,'productCreate'])->name('admin.products.create');
+});

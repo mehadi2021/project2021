@@ -4,17 +4,24 @@
             <li class="nav-item">
                 <a class="nav-link active" aria-current="page" href="#">
                     <span data-feather="home"></span>
-                    Kodeeo
+                    Dashboard
                 </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="{{url('/admin/orders')}}">
+                <a class="nav-link" href="{{route('admin.orders')}}">
                     <span data-feather="file"></span>
                     Orders
                 </a>
             </li>
-        </ul>
 
+            <li class="nav-item">
+                <a class="nav-link" href="{{route('admin.products')}}">
+                    <span data-feather="file"></span>
+                    Products
+                </a>
+            </li>
+
+        </ul>
 
     </div>
 </nav>
