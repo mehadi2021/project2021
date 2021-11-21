@@ -10,54 +10,71 @@
   <title>COS_Co-Operative System</title>
 
   <!-- Favicons -->
-  <link href="img/favicon.png" rel="icon">
-  <link href="img/apple-touch-icon.png" rel="apple-touch-icon">
+  <link href="{{ url('img/favicon.png') }}" rel="icon">
+  <link href="{{ url('img/apple-touch-icon.png') }}" rel="apple-touch-icon">
 
   <!-- Bootstrap core CSS -->
-  <link href="lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="{{ url('lib/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
   <!--external css-->
-  <link href="lib/font-awesome/css/font-awesome.css" rel="stylesheet" />
-  <link rel="stylesheet" type="text/css" href="css/zabuto_calendar.css">
-  <link rel="stylesheet" type="text/css" href="lib/gritter/css/jquery.gritter.css" />
+  <link href="{{ url('lib/font-awesome/css/font-awesome.css') }}" rel="stylesheet" />
+  <link rel="stylesheet" type="text/css" href="{{ url('css/zabuto_calendar.css') }}">
+  <link rel="stylesheet" type="text/css" href="{{ url('lib/gritter/css/jquery.gritter.css') }}" />
   <!-- Custom styles for this template -->
-  <link href="css/style.css" rel="stylesheet">
+  <link href="{{ url('css/style.css') }}" rel="stylesheet">
 
-  <link href="css/style-responsive.css" rel="stylesheet">
-  <script src="lib/chart-master/Chart.js"></script>
+  <link href="{{ url('css/style-responsive.css') }}" rel="stylesheet">
+  <script src="{{ url('lib/chart-master/Chart.js') }}"></script>
 
 </head>
 
 
     <!--main content start-->
-   
-              
-  @include('admin.partials.nav')  
 
-  
-  @include('admin.partials.header')  
-           
+    <section id="container">
+
+      @include('admin.partials.header')
 
 
- 
-    @include('admin.partials.footer')       
-    
-  
+
+      <aside>
+        <div id="sidebar" class="nav-collapse ">
+  @include('admin.partials.nav')
+</div>
+</aside>
+
+
+   <!--main content start-->
+   <section id="main-content">
+    <section class="wrapper"<i><h3><i class="fa fa-angle-right"></i> Advanced Form Components</h3>
+
+  @yield('content')
+
+
+</div>
+</section>
+
+<div class="panel-body">
+  <div class="col-lg-12">
+
+  @include('admin.partials.footer')
+
+
   <!-- js placed at the end of the document so the pages load faster -->
-  <script src="lib/jquery/jquery.min.js"></script>
+  <script src="{{ url('lib/jquery/jquery.min.js') }}"></script>
 
-  <script src="lib/bootstrap/js/bootstrap.min.js"></script>
-  <script class="include" type="text/javascript" src="lib/jquery.dcjqaccordion.2.7.js"></script>
-  <script src="lib/jquery.scrollTo.min.js"></script>
-  <script src="lib/jquery.nicescroll.js" type="text/javascript"></script>
-  <script src="lib/jquery.sparkline.js"></script>
+  <script src="{{ url('lib/bootstrap/js/bootstrap.min.js' )}}"></script>
+  <script class="include" type="text/javascript" src="{{ url('lib/jquery.dcjqaccordion.2.7.js') }}"></script>
+  <script src="{{ url('lib/jquery.scrollTo.min.js') }}"></script>
+  <script src="{{ url('lib/jquery.nicescroll.js') }}" type="text/javascript"></script>
+  <script src="{{ url('lib/jquery.sparkline.js') }}"></script>
   <!--common script for all pages-->
-  <script src="lib/common-scripts.js"></script>
-  <script type="text/javascript" src="lib/gritter/js/jquery.gritter.js"></script>
-  <script type="text/javascript" src="lib/gritter-conf.js"></script>
+  <script src="{{ url('lib/common-scripts.js') }}"></script>
+  <script type="text/javascript" src="{{ url('lib/gritter/js/jquery.gritter.js') }}"></script>
+  <script type="text/javascript" src="{{ url('lib/gritter-conf.js') }}"></script>
   <!--script for this page-->
-  <script src="lib/sparkline-chart.js"></script>
-  <script src="lib/zabuto_calendar.js"></script>
-  <script type="text/javascript">
+  <script src="{{ url('lib/sparkline-chart.js') }}"></script>
+  <script src="{{ url('lib/zabuto_calendar.js') }}"></script>
+  <script type="{{ url('text/javascript') }}">
     $(document).ready(function() {
       var unique_id = $.gritter.add({
         // (string | mandatory) the heading of the notification

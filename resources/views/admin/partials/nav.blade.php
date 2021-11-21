@@ -1,14 +1,13 @@
 
 <!--sidebar start-->
-    <aside>
-      <div id="sidebar" class="nav-collapse ">
+
         <!-- sidebar menu start-->
         <ul class="sidebar-menu" id="nav-accordion">
-          <p class="centered"><a href="profile.html"><img src="img/mehadi.jpg" class="img-circle" width="80"></a></p>
+          <p class="centered"><a href="profile.html"><img src="{{ url('img/mehadi.jpg') }}" class="img-circle" width="80"></a></p>
           <h5 class="centered">Mehadi Hasan</h5>
           <h5 style="color:blue;  text-align: center;">Admin Panel</h5>
           <li class="mt">
-            <a class="active" href="index.html">
+            <a class="active" href="{{route('admin')}}">
               <i class="fa fa-dashboard"></i>
               <span>Dashboard</span>
               </a>
@@ -19,9 +18,9 @@
               <span>Members</span>
               </a>
             <ul class="sub">
-              <li><a href="add membera.html">Add NEw Member</a></li>
-              <li><a href="buttons.html">Member List</a></li>
-              <li><a href="panels.html">Member Details List</a></li>
+              <li><a href="{{route('admin.members.add-member')}}">Add NEw Member</a></li>
+              <li><a href="{{route('admin.members.order-list')}}">Member List</a></li>
+              <li><a href="{{route('admin.members.product-list')}}">Member Details List</a></li>
               <li><a href="font_awesome.html">Transaction Posting</a></li>
                <li><a href="font_awesome.html">Withdrawal Posting</a></li>
             </ul>
@@ -112,6 +111,5 @@
           </li>
           <li>
         <!-- sidebar menu end-->
-      </div>
-    </aside>
+
     <!--sidebar end-->

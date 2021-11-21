@@ -8,14 +8,25 @@ use Illuminate\Http\Request;
 class ProductController extends Controller
 {
 
-    public function productList()
+
+
+     public function orderList()
+    {
+        return view('admin.layouts.order-list');
+
+    }
+
+     public function productList()
     {
         return view('admin.layouts.product-list');
+
     }
+
+
 
     public function productCreate()
     {
-        return view('admin.layouts.product-create');
+        return view('admin.layouts.add-member');
 
     }
 
