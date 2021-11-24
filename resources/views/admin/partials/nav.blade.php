@@ -5,7 +5,7 @@
         <ul class="sidebar-menu" id="nav-accordion">
           <p class="centered"><a href="profile.html"><img src="{{ url('img/mehadi.jpg') }}" class="img-circle" width="80"></a></p>
           <h5 class="centered">Mehadi Hasan</h5>
-          <h5 style="color:blue;  text-align: center;">Admin Panel</h5>
+          <h6 style="color:white;  text-align: center;">Admin Panel</h6>
           <li class="mt">
             <a class="active" href="{{route('admin')}}">
               <i class="fa fa-dashboard"></i>
@@ -19,10 +19,10 @@
               </a>
             <ul class="sub">
               <li><a href="{{route('admin.members.add-member')}}">Add NEw Member</a></li>
-              <li><a href="{{route('admin.members.order-list')}}">Member List</a></li>
-              <li><a href="{{route('admin.members.product-list')}}">Member Details List</a></li>
+              <li><a href="{{route('admin.members.member-add')}}">Member add</a></li>
+              <li><a href="">Member Details List</a></li>
               <li><a href="font_awesome.html">Transaction Posting</a></li>
-               <li><a href="font_awesome.html">Withdrawal Posting</a></li>
+               <li><a href="">Member Add</a></li>
             </ul>
           </li>
           <li class="sub-menu">
@@ -43,11 +43,11 @@
           <li class="sub-menu">
             <a href="javascript:;">
               <i class="fa fa-book"></i>
-              <span>Extra Pages</span>
+              <span>News Pages</span>
               </a>
             <ul class="sub">
-              <li><a href="blank.html">Blank Page</a></li>
-              <li><a href="login.html">Login</a></li>
+              <li><a href="{{ route('admin.news.add')}}">Create News</a></li>
+              <li><a href="{{ route('admin.news.list')}}">News Details</a></li>
               <li><a href="lock_screen.html">Lock Screen</a></li>
               <li><a href="profile.html">Profile</a></li>
               <li><a href="invoice.html">Invoice</a></li>
@@ -60,11 +60,11 @@
           <li class="sub-menu">
             <a href="javascript:;">
               <i class="fa fa-tasks"></i>
-              <span>Forms</span>
+              <span>Loan</span>
               </a>
             <ul class="sub">
-              <li><a href="form_component.html">Form Components</a></li>
-              <li><a href="advanced_form_components.html">Advanced Components</a></li>
+              <li><a href="{{route('admin.loan.add')}}">Loan Request</a></li>
+              <li><a href="{{route('admin.loan.list')}}">Loan Status</a></li>
               <li><a href="form_validation.html">Form Validation</a></li>
               <li><a href="contactform.html">Contact Form</a></li>
             </ul>

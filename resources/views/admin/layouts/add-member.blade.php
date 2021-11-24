@@ -9,29 +9,16 @@
           <div class="col-lg-12">
             <section class="panel">
                 <div class="panel-body">
-                <a class="btn btn-compose">
-                  <i class="fa fa-pencil"></i>  Compose Mail
-                  </a>
 
 
                <div class="col-md-10 col-sm-12  ">
                 <div class="x_panel">
                   <div class="x_title">
-                    <h2>Offical Information</h2>
-                    <ul class="nav navbar-right panel_toolbox">
-                      <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
-                      </li>
-                      <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-wrench"></i></a>
-                      </li>
-                      <li><a class="close-link"><i class="fa fa-close"></i></a>
-                      </li>
-                    </ul>
-                    <div class="clearfix"></div>
-                  </div>
+
+
                   <div class="x_content">
                     <br />
-                    <form action="{{route('admin.members.store')}}" class="form-horizontal form-label-left"  method="post">
+                    <form action="" class="form-horizontal form-label-left"  method="post">
  @csrf
 
                       <div class="form-group row">
@@ -133,6 +120,7 @@
 
                       <div class="form-group row">
                         <div class="col-md-9 offset-md-3">
+
                           <button type="submit" class="btn btn-primary">Cancel</button>
                           <button type="submit" class="btn btn-success">Submit</button>
                         </div>

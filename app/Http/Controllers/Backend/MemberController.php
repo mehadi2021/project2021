@@ -1,34 +1,48 @@
 <?php
 
 namespace App\Http\Controllers\Backend;
-use App\Models\Member;
 use App\Http\Controllers\Controller;
+use App\Models\Member;
 use Illuminate\Http\Request;
 
 class MemberController extends Controller
 {
-
-
-    public function memberCreate()
+ public function memberCreate()
     {
-        return view('admin.layouts.add-member');
+        return view('admin.layouts.add');
 
     }
 
-    public function memberStore(Request $request)
+      public function add(Request $request)
     {
 
-           Member::create([
-              'date'=>$request->input('date'),
-                'member_code'=>$request->input('member_id'),
-               'center'=>$request->input('center'),
-               'member_name'=>$request->input('member_name'),
-               'h_name'=>$request->input('h_name'),
-               'mother_name'=>$request->input('mother_name'),
-                 'birth'=>$request->input('birth'),
-               'phone_num'=>$request->input('phone'),
-               'h_phone'=>$request->input('g_phone'),
-               ] );
-       }
+ $request->validate([
+            'name' => 'required',
+            'email' => 'email|required|unique:users',
+            'account_no' => 'required|unique:members,account_no',
+            'voter_id'=>'required|unique:members,voter_id',
+            'phon_no'=>'required|unique:members,phon_no'
+        ]);
+        $add = member::create([
+            'user_id' =>$request-> id,
+            'address' => $request->address,
+            'dob' => $request->dob,
+            'gender' => $request->gender,
+            'voter_id' => $request->voter_id,
+            'phon_no' => $request->phon_no,
+            'account_no' => $request->account_no,
+            'branch' => $request->branch,
+            'image' => $request->member_image,
+        ]);
+
+    }
+
+ public function memberList()
+    {
+        return view('admin.layouts.member-add');
+
+    }
+
+
 
     }

@@ -1,6 +1,8 @@
 <?php
-namespace  App\Http\Controllers\Backend;
-use App\Http\Controllers\Backend\OrderController;
+namespace App\Http\Controllers\Backend;
+use App\Http\Controllers\Backend\MemberController;
+use App\Http\Controllers\Backend\LoanRequestController;
+use App\Http\Controllers\Backend\NewsController;
 use App\Http\Controllers\Backend;
 use Illuminate\Support\Facades\Route;
 
@@ -23,9 +25,16 @@ Route::group(['prefix'=>'admin-portal'],function(){
     Route::get('/', function () {
         return view('admin.master');
     })->name('admin');
-    Route::get('/members/order-list',[OrderController::class,'orderList'])->name('admin.members.order-list');
-    Route::get('/members/product-list',[ProductController::class,'productList'])->name('admin.members.product-list');
-     Route::get('/members/add-member',[MemberController::class,'memberCreate'])->name('admin.members.add-member');
-     Route::post('/members/store',[MemberController::class,'memberStore'])->name('admin.members.store');
+    Route::get('/members/member-add',[MemberController::class,'memberList'])->name('admin.members.member-add');
+    Route::get('/members/add-member',[MemberController::class,'memberCreate'])->name('admin.members.add-member');
+    Route::get('/members/add',[MemberController::class,'memberCreate'])->name('admin.members.add');
+    Route::post('/members/add',[MemberController::class,'add'])->name('admin.members.add');
+    Route::get('/news pages/news',[NewsController::class,'news'])->name('admin.news.add');
+    Route::post('/news pages/news',[NewsController::class,'news_store'])->name('admin.news.store');
+    Route::get('/news pages/news details',[NewsController::class,'list'])->name('admin.news.list');
+    Route::get('/loan/loan request',[LoanRequestController::class,'add'])->name('admin.loan.add');
+    Route::post('/loan/loan request',[LoanRequestController::class,'loan_store'])->name('admin.loan.store');
+    Route::get('/loan/loan status',[LoanRequestController::class,'list'])->name('admin.loan.list');
+
 
 });

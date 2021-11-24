@@ -45,19 +45,25 @@
 
    <!--main content start-->
    <section id="main-content">
-    <section class="wrapper"<i><h3><i class="fa fa-angle-right"></i> Advanced Form Components</h3>
+      <section class="wrapper">
+           <div class="row mt">
+          <div class="col-lg-12">
+
 
   @yield('content')
 
 
 </div>
+    </section>
+          </div>
+           </div>
 </section>
 
-<div class="panel-body">
-  <div class="col-lg-12">
+    <footer class="site-footer">
+ 
+@include('admin.partials.footer')
 
-  @include('admin.partials.footer')
-
+  </footer>
 
   <!-- js placed at the end of the document so the pages load faster -->
   <script src="{{ url('lib/jquery/jquery.min.js') }}"></script>

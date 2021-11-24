@@ -5,7 +5,7 @@
         <div class="fa fa-bars tooltips" data-placement="right" data-original-title="Toggle Navigation"></div>
       </div>
       <!--logo start-->
-      <a href="index.html" class="logo"><b>DASH<span>IO</span></b></a>
+      <a href="index.html" class="logo"><b>CO<span>OMS</span></b></a>
       <!--logo end-->
       <div class="nav notify-row" id="top_menu">
         <!--  notification start -->
@@ -35,7 +35,7 @@
                 </a>
               </li>
               <li>
-                
+
               <li class="external">
                 <a href="#">See All Tasks</a>
               </li>
@@ -66,7 +66,7 @@
                   </a>
               </li>
               <li>
-                
+
               <li>
                 <a href="index.html#">See all messages</a>
               </li>
@@ -103,4 +103,4 @@
       </div>
     </header>
      <!--header end-->
-    
+
