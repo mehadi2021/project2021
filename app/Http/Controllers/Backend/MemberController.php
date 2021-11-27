@@ -9,11 +9,11 @@ class MemberController extends Controller
 {
  public function memberCreate()
     {
-        return view('admin.layouts.add');
+        return view('admin.layouts.member');
 
     }
 
-      public function add(Request $request)
+      public function member_store (Request $request)
     {
 
  $request->validate([
@@ -23,8 +23,8 @@ class MemberController extends Controller
             'voter_id'=>'required|unique:members,voter_id',
             'phon_no'=>'required|unique:members,phon_no'
         ]);
-        $add = member::create([
-            'user_id' =>$request-> id,
+        $add = Member::create([
+            'user_id' =>$request->user_id,
             'address' => $request->address,
             'dob' => $request->dob,
             'gender' => $request->gender,
@@ -39,9 +39,19 @@ class MemberController extends Controller
 
  public function memberList()
     {
-        return view('admin.layouts.member-add');
 
-    }
+         $list=Member::all();
+         return view('admin.layouts.member-list', compact('list'));
+     }
+     public function details()
+     {
+         $list=Member::all();
+         return view('admin.layouts.member-details', compact('list'));
+     }
+
+
+
+
 
 
 

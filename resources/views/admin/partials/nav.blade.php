@@ -18,8 +18,8 @@
               <span>Members</span>
               </a>
             <ul class="sub">
-              <li><a href="{{route('admin.members.add-member')}}">Add NEw Member</a></li>
-              <li><a href="{{route('admin.members.member-add')}}">Member add</a></li>
+              <li><a href="{{route('admin.members.add')}}">Add NEw Member</a></li>
+              <li><a href="{{route('admin.members.list')}}">Member List</a></li>
               <li><a href="">Member Details List</a></li>
               <li><a href="font_awesome.html">Transaction Posting</a></li>
                <li><a href="">Member Add</a></li>
@@ -72,11 +72,11 @@
           <li class="sub-menu">
             <a href="javascript:;">
               <i class="fa fa-th"></i>
-              <span>Data Tables</span>
+              <span>Deposit</span>
               </a>
             <ul class="sub">
-              <li><a href="basic_table.html">Basic Table</a></li>
-              <li><a href="responsive_table.html">Responsive Table</a></li>
+              <li><a href="basic_table.html">Add Money</a></li>
+              <li><a href="responsive_table.html">View deposit Details</a></li>
               <li><a href="advanced_table.html">Advanced Table</a></li>
             </ul>
           </li>

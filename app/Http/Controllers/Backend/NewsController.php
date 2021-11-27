@@ -35,8 +35,8 @@ class NewsController extends Controller
 
     }
 
-     public function list(){
+     public function news_list(){
          $list=News::all();
-         return view('admin.layouts.newslist', compact('list'));
+         return view('admin.layouts.news-list', compact('list'));
      }
 }

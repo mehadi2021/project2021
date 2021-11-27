@@ -48,11 +48,7 @@
       <section class="wrapper">
            <div class="row mt">
           <div class="col-lg-12">
-
-
   @yield('content')
-
-
 </div>
     </section>
           </div>
@@ -60,7 +56,7 @@
 </section>
 
     <footer class="site-footer">
- 
+
 @include('admin.partials.footer')
 
   </footer>

@@ -1,7 +1,10 @@
 @extends('admin.master')
 @section('content')
-
  <h1 class="modal-title text-warning"  style="color:black;text-align:center;">Add News</h1>
+
+ <section class="panel">
+
+                <div class="panel-body">
 
 
 @if($errors->any())
@@ -55,8 +58,7 @@
      </div>
                   </form>
                     </div>
-                  </div>
+                  </>
                 </div>
             </div>
-
 @endsection
