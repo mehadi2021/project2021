@@ -15,10 +15,6 @@
                       <h4>member name</h4>
                       <p class="text-secondary mb-1">Co-operative society member</p>
                       <p class="text-muted font-size-sm">Female</p>
-                      {{-- <div class="btn-group">
-                        <button type="button" class="btn btn-success">Update Profile</button>
-                        <br> <button type="button" class="btn btn-info">Change Password</button>
-                   </div> --}}
                    <div class="bg-light mt-3 p-3 d-flex justify-content-center">
 
                     <a class="btn btn-success m-1" href="">Update Profile</a>
