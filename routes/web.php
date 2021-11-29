@@ -56,6 +56,6 @@ Route::get('/', function(){
 
 Route::group(['prefix'=>'user-portal'],function(){
     Route::get('/', function () {
-        return view('user.user');
+        return view('website.user');
     })->name('user');
 });

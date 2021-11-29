@@ -30,7 +30,7 @@ class LoanRequestController extends Controller
     }
     public function list(){
          $list=Loan::all();
-         return view('admin.layouts.loanlist', compact('list'));
+         return view('admin.layouts.loan-list', compact('list'));
      }
 
 

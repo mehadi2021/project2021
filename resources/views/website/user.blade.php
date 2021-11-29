@@ -54,8 +54,8 @@
     <div class="fluid-container d-flex w-100 mx-auto flex-column">
 
 
-  @include('user.partials.header')
-@include('user.partials.nav')
+  @include('website.fixeds.header')
+@include('website.fixeds.nav')
 
 <main>
 
@@ -74,7 +74,7 @@
 
 
 
-  @include('user.partials.footer')
+  @include('website.fixeds.footer')
 
     </div>
 

@@ -8,7 +8,7 @@
 
 
 
-<form action="{{route('admin.members.store')}}" class="form-horizontal form-label-left"  method="post">
+<form action="{{route('admin.members.store')}}" class="form-horizontal form-label-left"  method="post" enctype="multipart/form-data">
  @csrf
 
    <div class="form-group row">
@@ -16,14 +16,6 @@
          <label class="control-label col-md-3 col-sm-3 col-xs-3">User ID</label>
                  <div class="col-md-9 col-sm-9 col-xs-9">
                     <input type="text"  name="user_id" class="form-control" placeholder=" Enter Your user id" data-inputmask="'mask': '99/99/9999'">
-                </div>
-    </div>
-
-     <div class="form-group row">
-
-         <label class="control-label col-md-3 col-sm-3 col-xs-3">Enter Name</label>
-                 <div class="col-md-9 col-sm-9 col-xs-9">
-                    <input type="text"  name="name" class="form-control" placeholder=" Enter Your Account Opening Date" data-inputmask="'mask': '99/99/9999'">
                 </div>
     </div>
 
@@ -71,13 +63,7 @@
                 </div>
     </div>
 
-     <div class="form-group row">
 
-         <label class="control-label col-md-3 col-sm-3 col-xs-3">Email Address</label>
-                 <div class="col-md-9 col-sm-9 col-xs-9">
-                    <input type="text"  name="email" class="form-control" placeholder=" Enter Your Account Opening Date" data-inputmask="'mask': '99/99/9999'">
-                </div>
-    </div>
 
     <div class="form-group row">
 
@@ -95,19 +81,13 @@
                 </div>
     </div>
 
-    <div class="form-group row">
 
-         <label class="control-label col-md-3 col-sm-3 col-xs-3">Password</label>
-                 <div class="col-md-9 col-sm-9 col-xs-9">
-                    <input type="text" name="password" class="form-control" placeholder=" Enter Your Account Opening Date" data-inputmask="'mask': '99/99/9999'">
-                </div>
-    </div>
 
     <div class="form-group row">
 
          <label class="control-label col-md-3 col-sm-3 col-xs-3">Upload Image</label>
                  <div class="col-md-9 col-sm-9 col-xs-9">
-                    <input type="text" name="members_image"  class="form-control" placeholder=" Enter Your Account Opening Date" data-inputmask="'mask': '99/99/9999'">
+                    <input type="file" name="members_image"  class="form-control" data-inputmask="'mask': '99/99/9999'">
                 </div>
     </div>
 

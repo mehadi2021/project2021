@@ -7,46 +7,47 @@ use Illuminate\Http\Request;
 
 class MemberController extends Controller
 {
- public function memberCreate()
+ public function member_create()
     {
         return view('admin.layouts.member');
 
     }
 
-      public function member_store (Request $request)
+      public function  member_store (Request $request)
     {
+        if ($request->hasFile('members_image'))
+        {
+            $file=$request->file('members_image');
+           $filename= date('Ymdhms').'.'.$file->getClientOriginalExtension();
+           $file-> storeAs('/uploads',$filename);
 
- $request->validate([
-            'name' => 'required',
-            'email' => 'email|required|unique:users',
-            'account_no' => 'required|unique:members,account_no',
-            'voter_id'=>'required|unique:members,voter_id',
-            'phon_no'=>'required|unique:members,phon_no'
-        ]);
-        $add = Member::create([
-            'user_id' =>$request->user_id,
-            'address' => $request->address,
-            'dob' => $request->dob,
-            'gender' => $request->gender,
-            'voter_id' => $request->voter_id,
-            'phon_no' => $request->phon_no,
-            'account_no' => $request->account_no,
-            'branch' => $request->branch,
-            'image' => $request->member_image,
+        } 
+
+
+                 Member::create([
+            'user_id'=>$request->user_id,
+            'address'=>$request->address,
+            'dob'=>$request->dob,
+            'gender'=>$request->gender,
+            'voter_id'=>$request->voter_id,
+            'phon_no'=>$request->phon_no,
+            'account_no'=>$request->account_no,
+            'branch'=>$request->branch,
+            'image'=>$filename
         ]);
 
     }
 
- public function memberList()
+ public function member_list()
     {
 
          $list=Member::all();
          return view('admin.layouts.member-list', compact('list'));
      }
-     public function details()
+ public function member_details()
      {
-         $list=Member::all();
-         return view('admin.layouts.member-details', compact('list'));
+         $lists=Member::all();
+         return view('admin.layouts.member-details', compact('lists'));
      }
 
 
