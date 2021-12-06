@@ -47,19 +47,22 @@
    <section id="main-content">
       <section class="wrapper">
            <div class="row mt">
-          <div class="col-lg-12">
+          <div class="col-lg-11">
   @yield('content')
-</div>
-    </section>
+
           </div>
            </div>
-</section>
+           </section>
+     </section></section>
+ </html>
 
-    <footer class="site-footer">
+    <footer class="site-footer" >
 
 @include('admin.partials.footer')
 
   </footer>
+
+
 
   <!-- js placed at the end of the document so the pages load faster -->
   <script src="{{ url('lib/jquery/jquery.min.js') }}"></script>

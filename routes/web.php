@@ -22,22 +22,23 @@ Route::group(['prefix'=>'admin-portal'],function(){
     Route::get('/', function () {
         return view('admin/layouts/home');
     })->name('admin');
-     Route::get('/members/member',[MemberController::class,'memberCreate'])->name('admin.members.add');
+     Route::get('/members/member',[MemberController::class,'member_create'])->name('admin.members.add');
     Route::post('/members/member',[MemberController::class,'member_store'])->name('admin.members.store');
-    Route::get('/members/member-list',[MemberController::class,'memberList'])->name('admin.members.list');
-   Route::get('/members/member-list/member-details',[MemberController::class,'details'])->name('admin.members.details');
+    Route::get('/members/member-list',[MemberController::class,'member_list'])->name('admin.members.list');
+   Route::get('/members/member-list/{id}',[MemberController::class,'member_details'])->name('admin.members.details');
+ Route::delete('/members/member-list/{id}',[MemberController::class,'member_delete'])->name('admin.members.delete');
 
 
 
-    Route::get('/news pages/news',[NewsController::class,'news'])->name('admin.news.add');
+    Route::get('/news pages/news',[NewsController::class,'news_create'])->name('admin.news.add');
     Route::post('/news pages/news',[NewsController::class,'news_store'])->name('admin.news.store');
     Route::get('/news pages/news details',[NewsController::class,'news_list'])->name('admin.news.list');
 
 
 
-    Route::get('/loan/loan request',[LoanRequestController::class,'add'])->name('admin.loan.add');
+    Route::get('/loan/loan request',[LoanRequestController::class,'loan_add'])->name('admin.loan.add');
     Route::post('/loan/loan request',[LoanRequestController::class,'loan_store'])->name('admin.loan.store');
-    Route::get('/loan/loan status',[LoanRequestController::class,'list'])->name('admin.loan.list');
+    Route::get('/loan/loan status',[LoanRequestController::class,'loan_list'])->name('admin.loan.list');
 
 
 });

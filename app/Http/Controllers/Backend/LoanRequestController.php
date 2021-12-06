@@ -8,7 +8,7 @@ use Illuminate\Http\Request;
 
 class LoanRequestController extends Controller
 {
-    public function add()
+    public function loan_add()
     {
         return view('admin.layouts.loan');
     }
@@ -28,7 +28,7 @@ class LoanRequestController extends Controller
            return redirect()->back()->with('success','Data entry successfully');
 
     }
-    public function list(){
+    public function loan_list(){
          $list=Loan::all();
          return view('admin.layouts.loan-list', compact('list'));
      }
