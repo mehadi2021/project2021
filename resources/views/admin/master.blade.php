@@ -54,9 +54,8 @@
            </div>
            </section>
      </section></section>
- </html>
 
-    <footer class="site-footer" >
+    <footer class="site-footer" style=" position: fixed; left: 210px;bottom: 10px;width: 100%;">
 
 @include('admin.partials.footer')
 

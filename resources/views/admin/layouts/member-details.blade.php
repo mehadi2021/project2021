@@ -31,7 +31,7 @@
 
 
                 </ul>
-                <a class="btn btn-theme" href="#">Order Now</a>
+                <a class="btn btn-theme" href="#">Print Now</a>
               </div>
 
               <!-- end custombox -->
