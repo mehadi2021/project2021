@@ -5,7 +5,7 @@
 <h1 style="text-align: center; color:black;">Wellcome to our admin panel</h1>
 
 
-
+<div class="row content-panel" style="margin-left:10px;">
 
                           <div class="row mt" >
           <div class="col-lg-12">
@@ -48,7 +48,7 @@
 				</div>
 
 
-
+                          </div>
 
 
                           </div></div>

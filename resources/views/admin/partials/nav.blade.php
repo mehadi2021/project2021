@@ -3,9 +3,9 @@
 
         <!-- sidebar menu start-->
         <ul class="sidebar-menu" id="nav-accordion">
-          <p class="centered"><a href="profile.html"><img src="{{ url('img/mehadi.jpg') }}" class="img-circle" width="80"></a></p>
-          <h5 class="centered">Mehadi Hasan</h5>
-          <h6 style="color:white;  text-align: center;">Admin Panel</h6>
+          <p class="centered"><a href="{{ route('admin.profile') }}"><img src="{{ url('img/mehadi.jpeg') }}" class="img-circle" width="90" height="90"></a></p>
+          <h5 class="centered">MeHadi HaSan</h5>
+          <h6 style="color:white;  text-align: center;">Administrator</h6>
           <li class="mt">
             <a class="active" href="{{route('admin')}}">
               <i class="fa fa-dashboard"></i>

@@ -44,7 +44,7 @@
 
 
    <!--main content start-->
-   <section id="main-content">
+   <section id="main-content" style="width:92%;">
       <section class="wrapper">
            <div class="row mt">
           <div class="col-lg-11">
@@ -55,7 +55,7 @@
            </section>
      </section></section>
 
-    <footer class="site-footer" style=" position: fixed; left: 210px;bottom: 10px;width: 100%;">
+    <footer class="site-footer" style=" position: fixed; left: 215px;bottom: 6px;width: 85%;">
 
 @include('admin.partials.footer')
 
