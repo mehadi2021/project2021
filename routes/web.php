@@ -19,11 +19,23 @@ Route::get('/', function(){
 });
 
 Route::group(['prefix'=>'admin-portal'],function(){
-    Route::get('/', function () {
-        return view('admin/layouts/home');
-    })->name('admin');
+    //  Route::get('/', function () {
+    //  return view('admin/layouts/home');
+ //})->name('admin');
+Route::get('/',[AdminProfileController::class,'dashboard'])->name('admin');
+
+
+
+
+
+
     Route::get('/image/mehadi.jpg',[AdminProfileController::class,'profile'])->name('admin.profile');
      Route::get('/image/mehadi.jpg/profile-edit',[AdminProfileController::class,'edit'])->name('admin.edit');
+
+
+
+
+
 
 
      Route::get('/members/member',[MemberController::class,'member_create'])->name('admin.members.add');

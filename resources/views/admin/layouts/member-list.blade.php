@@ -26,7 +26,6 @@
 <tbody>
     @foreach($list  as  $key=>$news)
     <tr>
-        {{ $news->count() }}
 
     <td>{{ $key+1 }}</td>
     <td>{{ $news->user_id}}</td>
@@ -34,9 +33,9 @@
     <td>{{ $news->phon_no}}</td>
     <td>{{ $news->branch}}</td>
 
-    <td style="text-align:center;"> <a class="btn btn-primary" href="{{route('admin.members.details',$news->id)}}" role="button">details</a>
+    <td style="text-align:center;"> <a class="btn btn-info" href="{{route('admin.members.details',$news->id)}}" role="button">details</a>
         <a class="btn btn-primary" href="" role="button">edit</a>
-        <a class="btn btn-primary" href="{{ route('admin.members.delete',$news->id)}}" role="button">delete</a></td>
+        <a class="btn btn-danger" href="{{ route('admin.members.delete',$news->id)}}" role="button">delete</a></td>
 
     </tr>
 
