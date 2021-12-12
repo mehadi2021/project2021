@@ -19,7 +19,7 @@
 
 
 
-<div style="margin-top: 100px;">
+<div style="margin-top: 80px;">
 
 @if(session('success'))
     <div class="alert alert-success">

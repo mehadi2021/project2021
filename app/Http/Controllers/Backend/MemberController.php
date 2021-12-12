@@ -35,6 +35,8 @@ class MemberController extends Controller
             'image'=>$filename
         ]);
 
+          return redirect()->back()->with('success', 'Member added successfully');
+
     }
 
               public function member_list()
@@ -50,8 +52,10 @@ class MemberController extends Controller
              }
              public function member_delete($id)
              {
+                 //dd($id);
                  $lis=Member::find($id);
                  $lis->delete();
+                 return redirect()->back();
              }
 
 

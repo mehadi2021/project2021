@@ -67,7 +67,7 @@
          <div class="col-md-9 offset-md-3">
 
         <button type="submit" class="btn btn-primary">Submit</button>
-        <button type="submit" class="btn btn-success">Cancel</button>
+        <a href={{ route('admin.profile') }} class="btn btn-success">Cancel</a>
          </div>
      </div>
 

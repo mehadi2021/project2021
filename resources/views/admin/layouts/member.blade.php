@@ -5,6 +5,30 @@
    <section class="panel">
 
                 <div class="panel-body">
+                    @if($errors->any())
+    <div class="alert alert-danger">
+        <ul>
+            @foreach($errors->all() as $error)
+                <li>{{ $error }}</li>
+            @endforeach
+        </ul>
+    </div>
+    @endif
+
+<div style="margin-top: 10px;">
+
+@if(session('success'))
+    <div class="alert alert-success">
+        {!!  session ('success')  !!}
+    </div>
+@endif
+
+ @if(session('error'))
+    <div class="alert alert-danger">
+           { !! session('error') !! }
+    </div>
+@endif
+
 
 
 
@@ -20,7 +44,7 @@
     </div>
 
     <div class="form-group row">
-         <label class="control-label col-md-3 col-sm-3 col-xs-3">date of birth</label>
+         <label class="control-label col-md-3 col-sm-3 col-xs-3">Date of Birth</label>
                  <div class="col-md-9 col-sm-9 col-xs-9">
                      <input type="text" name="dob"  class="form-control" placeholder=" Enter your Member Id" data-inputmask="'mask' : '(999) 999-9999'">
                 </div>

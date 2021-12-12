@@ -29,8 +29,8 @@ Route::group(['prefix'=>'admin-portal'],function(){
      Route::get('/members/member',[MemberController::class,'member_create'])->name('admin.members.add');
     Route::post('/members/member',[MemberController::class,'member_store'])->name('admin.members.store');
     Route::get('/members/member-list',[MemberController::class,'member_list'])->name('admin.members.list');
-   Route::get('/members/member-list/{id}',[MemberController::class,'member_details'])->name('admin.members.details');
- Route::delete('/members/member-list/{id}',[MemberController::class,'member_delete'])->name('admin.members.delete');
+   Route::get('/members/member-list/details/{id}',[MemberController::class,'member_details'])->name('admin.members.details');
+ Route::get('/members/member-list/delete/{id}',[MemberController::class,'member_delete'])->name('admin.members.delete');
 
 
 
