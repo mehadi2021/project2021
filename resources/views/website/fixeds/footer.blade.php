@@ -68,9 +68,9 @@
       <div class="container">
         <div class="row">
           <div class="col-md-12">
-            <p>Copyright &copy; 2020 Financial Business Co., Ltd.
+            <p>Copyright &copy; 2021 Co-Operative System Ltd.
 
-            - Design: <a rel="nofollow noopener" href="https://templatemo.com" target="_blank">TemplateMo</a></p>
+         <br> Design: <a rel="nofollow noopener" href="https://templatemo.com" target="_blank" style="font-size:10px;">(Mehadi Hasan_17203087(IUBAT))</a></p>
           </div>
         </div>
       </div>

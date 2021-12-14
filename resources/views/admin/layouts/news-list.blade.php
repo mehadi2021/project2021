@@ -25,8 +25,8 @@
     <tr>
     <td>{{ $key+1 }}</td>
     <td>{{ $news->news_description }}</td>
-    <td><a class="btn btn-primary" href="" role="button">edit</a>
-    <a class="btn btn-primary" href="" role="button">delete</a></td>
+    <td><a class="btn btn-info" href="" role="button">edit</a>
+    <a class="btn btn-danger" href="{{ route('admin.news.delete',$news->id) }}" role="button">delete</a></td>
     </tr>
      @endforeach
 

@@ -3,6 +3,7 @@
 
 
     <!-- Button trigger modal -->
+    <h1 class="modal-title text-warning"  style="color:black;text-align:center;"> Member  Details</h1>
 <div class=" text-start">
 <a href="{{route ('admin.members.add') }}" class="btn btn-info " data-bs-toggle="modal" data-bs-target="#exampleModal">
     Add member

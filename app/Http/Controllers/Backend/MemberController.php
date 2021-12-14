@@ -54,7 +54,11 @@ class MemberController extends Controller
              {
                  //dd($id);
                  $lis=Member::find($id);
+
+
                  $lis->delete();
+
+
                  return redirect()->back();
              }
 

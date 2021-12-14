@@ -39,4 +39,11 @@ class NewsController extends Controller
          $list=News::all();
          return view('admin.layouts.news-list', compact('list'));
      }
+
+     public function news_delete($id){
+         $list=News::find($id);
+         $list->delete();
+            return redirect()->back();
+     }
+  
 }

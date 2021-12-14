@@ -1,6 +1,8 @@
 <?php
 namespace App\Http\Controllers\Backend;
+use App\Http\Controllers\frontend;
 use App\Http\Controllers\frontend\UserController;
+use App\Http\Controllers\frontend\ServiceController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -49,12 +51,14 @@ Route::get('/',[AdminProfileController::class,'dashboard'])->name('admin');
     Route::get('/news pages/news',[NewsController::class,'news_create'])->name('admin.news.add');
     Route::post('/news pages/news',[NewsController::class,'news_store'])->name('admin.news.store');
     Route::get('/news pages/news details',[NewsController::class,'news_list'])->name('admin.news.list');
+     Route::get('/news pages/news details/delete/{id}',[NewsController::class,'news_delete'])->name('admin.news.delete');
 
 
 
     Route::get('/loan/loan request',[LoanRequestController::class,'loan_add'])->name('admin.loan.add');
     Route::post('/loan/loan request',[LoanRequestController::class,'loan_store'])->name('admin.loan.store');
     Route::get('/loan/loan status',[LoanRequestController::class,'loan_list'])->name('admin.loan.list');
+    Route::get('/loan/loan status/delete/{id}',[LoanRequestController::class,'loan_delete'])->name('admin.loan.delete');
 
 
 });
@@ -73,6 +77,12 @@ Route::get('/', function(){
 
 Route::group(['prefix'=>'user-portal'],function(){
     Route::get('/', function () {
-        return view('website.user');
+        return view('website.pages.home');
     })->name('user');
+
+
+Route::post('/registration',[UserController::class,'registration'])->name('user.registration');
+Route::get('/service',[ServiceController::class,'service'])->name('user.service');
+
+
 });

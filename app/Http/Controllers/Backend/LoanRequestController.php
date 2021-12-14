@@ -32,6 +32,12 @@ class LoanRequestController extends Controller
          $list=Loan::all();
          return view('admin.layouts.loan-list', compact('list'));
      }
+      public function loan_delete($id)
+      {
+         $list=Loan::find($id);
+         $list->delete();
+         return redirect()->back();
+     }
 
 
 }
