@@ -11,18 +11,39 @@
 <form action="{{ route('admin.loan.store') }}" class="form-horizontal form-label-left"  method="post">
  @csrf
 
-     <div class="form-group row">
-
-         <label class="control-label col-md-3 col-sm-3 col-xs-3">Enter Member</label>
-                 <div class="col-md-9 col-sm-9 col-xs-9">
-                  <select class="form-control" name="gender" id="" aria-label="Default select example"required>
-                        <option value="Null" >select from here</option>
-                        <option value="Male">Male</option>
-                        <option value="Female">Female</option>
-                        <option value="Other">Other</option>
-                  </select>
-              </div>
+   <div class="panel-body">
+                    @if($errors->any())
+    <div class="alert alert-danger">
+        <ul>
+            @foreach($errors->all() as $error)
+                <li>{{ $error }}</li>
+            @endforeach
+        </ul>
     </div>
+    @endif
+
+<div style="margin-top: 10px;">
+
+@if(session('success'))
+    <div class="alert alert-success">
+        {!!  session ('success')  !!}
+    </div>
+@endif
+
+ @if(session('error'))
+    <div class="alert alert-danger">
+           { !! session('error') !! }
+    </div>
+@endif
+
+
+
+        <div class="form-group row">
+         <label class="control-label col-md-3 col-sm-3 col-xs-3">User ID</label>
+                 <div class="col-md-9 col-sm-9 col-xs-9">
+                     <input type="text" name="member_id" class="form-control" placeholder=" Enter your amount" data-inputmask="'mask' : '(999) 999-9999'">
+                </div>
+     </div>
 
     <div class="form-group row">
          <label class="control-label col-md-3 col-sm-3 col-xs-3">Loan Amount</label>

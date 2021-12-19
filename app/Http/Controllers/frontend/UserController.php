@@ -1,13 +1,19 @@
 <?php
 
 namespace App\Http\Controllers\frontend;
-
 use App\Http\Controllers\Controller;
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+
 
 class UserController extends Controller
 {
+
+    public function home()
+    {
+        return view('website.pages.home');
+    }
     public function registration(Request $request)
     {
         //validate this request
@@ -30,4 +36,26 @@ class UserController extends Controller
 
 
     }
+
+ public function userLogin(Request $request){
+        // dd($request->all());
+
+         $post= $request->except('_token');
+        //  dd(post);
+        // dd(Auth::attempt($post));
+         if (Auth::attempt($post)) {
+             return redirect()->back()->with('batch','login Successful.');;
+         }
+         else
+         return redirect()->back();
+         return redirect()->back()->with('batch','email not found.');
+     }
+
+     public function userLogout(){
+         Auth::logout();
+         return redirect()->back();
+     }
+
+
+
 }

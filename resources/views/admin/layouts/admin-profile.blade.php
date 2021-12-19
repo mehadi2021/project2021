@@ -29,6 +29,7 @@
                   <p><img src="{{ url('img/mehadi.jpeg') }}" class="img-circle"></p>
                   <p>
                     <button class="btn btn-theme"><i class="fa fa-check"></i> Follow</button>
+                      <a href="" class="btn btn-theme02" >Registration</a>
                     <a href="{{route ('admin.edit') }}" class="btn btn-theme02" >Profile Edit </a>
                   </p>
                 </div>

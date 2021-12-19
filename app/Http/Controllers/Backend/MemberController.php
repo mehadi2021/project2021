@@ -15,6 +15,16 @@ class MemberController extends Controller
 
       public function  member_store (Request $request)
     {
+          $request->validate([
+            'user_id'=>'required|unique:members|alpha_num|min:5|max:8',
+            'dob'=>'required',
+            'address'=>'required|alpha',
+            'gender'=>'required',
+            'voter_id'=>'required|unique:members',
+            'phon_no'=>'required|digits:11',
+            'account_no'=>'required|numeric|min:6',
+            'branch'=>'required|alpha'
+        ]);
         $filename = "";
                     if($request->hasFile('members_image'))
                     {

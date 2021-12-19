@@ -11,13 +11,60 @@
       </div>
     </div>
 
-    <header class="">
+
+
+
+      <div style="margin-left:150px; margin-top:8px;">
+        <div class="row">
+          <div class="col-md-11">
+           @if(session('batch'))
+   <div class="alert alert-success"  style="text-align: center"; >
+    {!! session('batch')!!}
+</div>
+@endif
+@if(session('error'))
+    <div class="alert alert-danger" style="text-align: center";>
+           { !! session('error') !! }
+    </div>
+@endif
+
+@if ($errors->any())
+<div class="alert alert-danger" style="text-align: center";>
+<ul>
+    @foreach ($errors->all() as $error)
+        <li >{{$error}}</li>
+    @endforeach
+</ul>
+</div>
+@endif
+          </div>
+        </div>
+      </div>
+
+
+
+
+
+
+
+
+    <header>
       <nav class="navbar navbar-expand-lg">
         <div class="container">
           <a class="navbar-brand" href="index.html"><h2>Co-Operative Society</h2></a>
+
+
+
+
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
+
+
+
+
+
+
           <div class="collapse navbar-collapse" id="navbarResponsive">
             <ul class="navbar-nav ml-auto">
               <li class="nav-item active">
@@ -28,19 +75,48 @@
               <li class="nav-item">
                 <a class="nav-link" href="about.html">About Us</a>
               </li>
+              @if (auth()->user())
               <li class="nav-item">
                 <a class="nav-link" href="{{ route('user.service') }}">Our Services</a>
               </li>
-
+              @else
+               <li class="nav-item">
+                   <a class="nav-link" href="">service</a></li>
+@endif
                <li class="nav-item">
                 <a class="nav-link" href="contact.html">Contact Us</a>
               </li>
-               <li class="nav-item">
+
+
+
+
+
+
+
+
+
+
+
+
+  @if (auth()->user())
+                           <li class="nav-item">
+                <a class="nav-link" href="{{route('user.logout')}}">logout</a>
+              </li>
+                           <li class="nav-item">
+                <a class="nav-link" href="contact.html">{{auth()->user()->name}}</a>
+              </li>
+                    @else
+                        <li class="nav-item">
                 <a class="nav-link" data-toggle="modal" data-target="#login">Login </a>
               </li>
-               <li class="nav-item">
+                <li class="nav-item">
                <a class="nav-link" data-toggle="modal" data-target="#registration"> Registration</a>
               </li>
+
+
+                    @endif
+
+
             </ul>
           </div>
         </div>
@@ -61,8 +137,12 @@
 
 
 
+
+
+
+
     <!-- Registration Modal -->
-<div class="modal fade" style="margin-top:100px"; id="registration" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" style="margin-top:120px"; id="registration" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
@@ -105,7 +185,7 @@
 
 
 <!-- login Modal -->
-<div class="modal fade"  style="margin-top:100px"; id="login" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade"  style="margin-top:120px"; id="login" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
@@ -115,23 +195,24 @@
                 </button>
             </div>
             <div class="modal-body">
-                <form action="">
-
+            <form action="{{route('user.do.login')}}" method="POST">
+                                 @csrf
                     <div class="form-group">
                         <label>Enter User Email:</label>
-                        <input type="email" class="form-control">
+                        <input type="email" class="form-control" name="email">
                     </div>
                     <div class="form-group">
                         <label>Enter User Password:</label>
-                        <input type="password" class="form-control">
+                        <input type="password" class="form-control" name="password">
                     </div>
+                       <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="submit" class="btn btn-primary">Save changes</button>
+            </div>
 
                 </form>
             </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary">Save changes</button>
-            </div>
+
         </div>
     </div>
 </div>

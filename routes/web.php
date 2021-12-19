@@ -1,7 +1,6 @@
 <?php
 namespace App\Http\Controllers\Backend;
-use App\Http\Controllers\frontend;
-use App\Http\Controllers\frontend\UserController;
+use App\Http\Controllers\frontend\UserController as UController;
 use App\Http\Controllers\frontend\ServiceController;
 use Illuminate\Support\Facades\Route;
 
@@ -15,24 +14,29 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::get('/', function(){
-    return  redirect()->route('admin');
+// Route::get('/', function(){
+//     return  redirect()->route('admin.page');
 
-});
+// });
 
 Route::group(['prefix'=>'admin-portal'],function(){
     //  Route::get('/', function () {
     //  return view('admin/layouts/home');
  //})->name('admin');
-Route::get('/',[AdminProfileController::class,'dashboard'])->name('admin');
+ Route::get('/login',[UserController ::class,'page'])->name('admin.page');
+  Route::post('/login',[UserController ::class,'log'])->name('admin.log');
+
+Route::group(['middleware'=>'auth'],function(){
+Route::get('/logout',[UserController ::class,'logout'])->name('admin.logout');
+Route::get('/',[DashboardController ::class,'dashboard'])->name('admin');
 
 
 
 
 
 
-    Route::get('/image/mehadi.jpg',[AdminProfileController::class,'profile'])->name('admin.profile');
-     Route::get('/image/mehadi.jpg/profile-edit',[AdminProfileController::class,'edit'])->name('admin.edit');
+    Route::get('/image/mehadi.jpg',[UserController::class,'profile'])->name('admin.profile');
+     Route::get('/image/mehadi.jpg/profile-edit',[UserController::class,'edit'])->name('admin.edit');
 
 
 
@@ -68,21 +72,27 @@ Route::get('/',[AdminProfileController::class,'dashboard'])->name('admin');
 
 
 
-
-
-Route::get('/', function(){
-    return  redirect()->route('user');
-
 });
 
+Route::get('/', function(){
+     return  redirect()->route('user');
+
+ });
+
 Route::group(['prefix'=>'user-portal'],function(){
-    Route::get('/', function () {
-        return view('website.pages.home');
+     Route::get('/', function () {
+         return view('website.pages.home');
     })->name('user');
+// Route::get('/',[UController::class,'home'])->name('user');
 
-
-Route::post('/registration',[UserController::class,'registration'])->name('user.registration');
+Route::post('/registration',[UController::class,'registration'])->name('user.registration');
+Route::get('/service',[UController::class,'ser'])->name('user.ser');
+Route::post('/login/post',[UController::class,'userLogin'])->name('user.do.login');
+Route::get('/user/logout',[UController::class,'userLogout'])->name('user.logout');
+Route::group(['middleware'=>'auth'],function(){
 Route::get('/service',[ServiceController::class,'service'])->name('user.service');
+});
+
 
 
 });

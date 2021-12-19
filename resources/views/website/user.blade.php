@@ -44,7 +44,7 @@ https://templatemo.com/tm-545-finance-business
      @include('website.fixeds.header')
 
     <!-- Page Content -->
-  
+
 @yield('content')
 
     <!-- Footer Starts Here -->

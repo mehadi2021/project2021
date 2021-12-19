@@ -3,6 +3,17 @@
 
 
 <h1 style="text-align: center; color:black;">Wellcome to our admin panel</h1>
+@if(session('success'))
+    <div class="alert alert-success" style="text-align:center;">
+      <h4>  {!!  session ('success')  !!}@if (auth()->user()){{auth()->user()->name}}<h4>@endif
+    </div>
+@endif
+
+ @if(session('error'))
+    <div class="alert alert-danger" style="text-align:center;">
+           { !! session('error') !! }
+    </div>
+@endif
 
 
 <div class="row content-panel" style="margin-left:10px;">

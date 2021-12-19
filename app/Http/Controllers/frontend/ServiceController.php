@@ -10,5 +10,11 @@ class ServiceController extends Controller
     public function service()
     {
     return view('website.pages.service');
+
+    }
+     public function ser()
+    {
+    return view('website.pages.ser');
+
     }
 }
