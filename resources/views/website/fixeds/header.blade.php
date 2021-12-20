@@ -3,8 +3,8 @@
         <div class="row">
           <div class="col-md-8 col-xs-12">
             <ul class="left-info">
-              <li><a href="#"><i class="fa fa-clock-o"></i>Mon-Fri 09:00-17:00</a></li>
-              <li><a href="#"><i class="fa fa-phone"></i>090-080-0760</a></li>
+              <li><a href="#"><i class="fa fa-clock-o"></i>Sun-Thus 09:00-17:00</a></li>
+              <li><a href="#"><i class="fa fa-phone"></i>01714-797978</a></li>
             </ul>
           </div>
         </div>
@@ -80,8 +80,9 @@
                 <a class="nav-link" href="{{ route('user.service') }}">Our Services</a>
               </li>
               @else
-               <li class="nav-item">
-                   <a class="nav-link" href="">service</a></li>
+                <li class="nav-item">
+                <a class="nav-link" data-toggle="modal" data-target="#login1">Our Services </a>
+              </li>
 @endif
                <li class="nav-item">
                 <a class="nav-link" href="contact.html">Contact Us</a>
@@ -172,7 +173,7 @@
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                        <button type="submit" class="btn btn-primary">Save changes</button>
+                        <button type="submit" class="btn btn-primary">Registration</button>
                     </div>
                 </form>
             </div>
@@ -207,7 +208,7 @@
                     </div>
                        <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                <button type="submit" class="btn btn-primary">Save changes</button>
+                <button type="submit" class="btn btn-primary">Log In</button>
             </div>
 
                 </form>
@@ -216,3 +217,55 @@
         </div>
     </div>
 </div>
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="modal fade"  style="margin-top:120px"; id="login1" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <h5 style="margin-top:10px; text-align:center;" >First login then access this page</h5>
+            <div class="modal-header">
+
+                <h3 class="modal-title" id="exampleModalLabel">User Login</h3>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+            <form action="{{route('user.do.login')}}" method="POST">
+                                 @csrf
+                    <div class="form-group">
+                        <label>Enter User Email:</label>
+                        <input type="email" class="form-control" name="email">
+                    </div>
+                    <div class="form-group">
+                        <label>Enter User Password:</label>
+                        <input type="password" class="form-control" name="password">
+                    </div>
+                       <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="submit" class="btn btn-primary">Log In</button>
+            </div>
+
+                </form>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+

@@ -94,5 +94,4 @@ Route::get('/service',[ServiceController::class,'service'])->name('user.service'
 });
 
 
-
 });

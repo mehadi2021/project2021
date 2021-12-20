@@ -12,6 +12,7 @@
     <title>C0_Operative Society Management System</title>
 
     <!-- Bootstrap core CSS -->
+    <link href="{{ url('img/favicon.png') }}" rel="icon">
     <link href="{{ url('website/bootstrap/css/bootstrap.min.css') }} " rel="stylesheet">
 
     <!-- Additional CSS Files -->

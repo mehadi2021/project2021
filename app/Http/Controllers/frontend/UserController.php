@@ -53,7 +53,7 @@ class UserController extends Controller
 
      public function userLogout(){
          Auth::logout();
-         return redirect()->back();
+         return redirect()->route('user');
      }
 
 

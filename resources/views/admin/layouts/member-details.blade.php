@@ -25,15 +25,15 @@
                 </div>
                 <br>
                 <br>
-                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry.</p>
                 <ul class="pricing">
-                  <li>150 Mb Storage</li>
-                  <li>{{$lists->id}}</li>
-                  <li>2 Sub Domains</li>
-                  <li>3 MySQL DBs</li>
-                  <li>2 Emails</li>
-                  <li>WordPress Installation</li>
-                  <li>24/7 Support</li>
+                  <li>Member Name:</li>
+                  <li>Member ID:{{$lists->id}}</li>
+                    <li>NID Number</li>
+                  <li>Account Number:</li>
+                  <li>Total Amount:</li>
+                  <li>Date of Birth:</li>
+                  <li>Email Address:</li>
+                  <li>Address:</li>
                 </ul>
 
                 <a class="btn btn-theme" href="#">Print Now</a>

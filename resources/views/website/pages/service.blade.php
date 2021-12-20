@@ -17,30 +17,30 @@
         <div class="row" id="tabs">
           <div class="col-md-3">
             <ul>
-              <li><a href='#tabs-1'>Member Profile <i class="fa fa-angle-right"></i></a></li>
+              <li><a href='#tabs-1'>Deposit <i class="fa fa-angle-right"></i></a></li>
               <li><a href='#tabs-2'>Loan Request <i class="fa fa-angle-right"></i></a></li>
               <li><a href='#tabs-3'>Payment <i class="fa fa-angle-right"></i></a></li>
               <li><a href='#tabs-4'>Withdraw <i class="fa fa-angle-right"></i></a></li>
             </ul>
           </div>
-          <div class="col-md-9">
-            <section class='tabs-content'>
-              <article id='tabs-1'>
+          <div class="col-md-9"  >
+              <article id='tabs-1' style="margin-left:30px;">
                 <img src="assets/images/single_service_01.jpg" alt="">
                 <h4>Market Analysis</h4>
                 <p>Vivamus sed feugiat elit. Pellentesque pretium, massa at placerat vehicula, neque turpis pulvinar tortor, eget convallis lorem odio non tortor. Donec massa est, fermentum sit amet felis ac, maximus luctus elit. Vivamus aliquet, dolor id imperdiet imperdiet, dui diam aliquet dui, a euismod metus enim ac velit. Vivamus eu tristique odio, vel tristique quam.
                 <br><br>Proin eu molestie risus. Etiam suscipit pretium odio, at consectetur nisi. Sed ut dolor in augue cursus ultrices. Vivamus mauris turpis, auctor vel facilisis in, tincidunt vel diam. Sed vitae scelerisque orci. Nunc non magna orci. Aliquam commodo mauris ante.</p>
               </article>
-              <article id='tabs-2'>
+              <article id='tabs-2' style="margin-left:30px;">
                 <img src="assets/images/single_service_02.jpg" alt="">
-                <h4>Loan Request</h4>
+                <h4 style="text-align:center;">Loan Request</h4>
+                <br>
               <form action="" class="form-horizontal form-label-left"  method="post">
  @csrf
 
      <div class="form-group row">
 
          <label class="control-label col-md-3 col-sm-3 col-xs-3">Enter Member</label>
-                 <div class="col-md-9 col-sm-9 col-xs-9">
+                 <div class="col-md-9 col-sm-9 col-xs-12">
                   <select class="form-control" name="gender" id="" aria-label="Default select example"required>
                         <option value="Null" >select from here</option>
                         <option value="Male">Male</option>
@@ -108,13 +108,13 @@
 
 </form>
  </article>
-              <article id='tabs-3'>
+              <article id='tabs-3' style="margin-left:30px;">
                 <img src="assets/images/single_service_03.jpg" alt="">
                 <h4>Accounting Service</h4>
                 <p>Mauris lobortis quam id dictum dignissim. Donec pellentesque erat dolor, cursus dapibus turpis hendrerit quis. Suspendisse at suscipit arcu. Nulla sed erat lectus. Nulla facilisi. In sit amet neque sapien. Donec scelerisque mi at gravida efficitur. Nunc lacinia a est eu malesuada. Curabitur eleifend elit sapien, sed pulvinar orci luctus eget.
                 <br><br>Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Nunc vel ultrices nulla, ac tincidunt eros. Aenean quis tellus velit. Praesent pretium justo non auctor condimentum.</p>
               </article>
-              <article id='tabs-4'>
+              <article id='tabs-4' style="margin-left:30px;">
                 <img src="assets/images/single_service_04.jpg" alt="">
                 <h4>Overall Evaluation</h4>
                 <p>Integer vehicula sapien quis dolor efficitur, eget molestie eros tempus. Curabitur sollicitudin, tortor at suscipit volutpat, nisi arcu aliquet dui, vitae semper sem turpis quis libero. Quisque vulputate lacinia nisl ac lobortis. Ut ultricies maximus turpis, in sollicitudin ligula posuere vel.

@@ -1,9 +1,8 @@
-@extends ('admin.master')
-@section('content')
 
 
 
-{{-- <!DOCTYPE html>
+
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -30,7 +29,7 @@
   <link href="{{ url('css/style-responsive.css') }}" rel="stylesheet">
   <script src="{{ url('lib/chart-master/Chart.js') }}"></script>
 
-</head> --}}
+</head>
 <body>
   <div id="login-page">
     <div class="container">
@@ -81,4 +80,4 @@
 </body>
 
 </html>
-@endsection
+
