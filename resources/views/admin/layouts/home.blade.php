@@ -9,12 +9,6 @@
     </div>
 @endif
 
- @if(session('error'))
-    <div class="alert alert-danger" style="text-align:center;">
-           { !! session('error') !! }
-    </div>
-@endif
-
 
 <div class="row content-panel" style="margin-left:10px;">
 
@@ -30,8 +24,8 @@
 							<h4>Member</h4>
 						</div>
                         </div>
-                </div>     	
-					
+                </div>
+
 					<div class="col-md-3 widget states-mdl"  style=" background-color: #263544; color:white; padding-top:10px;   text-align:center; margin:40px;">
                                                2400
 						<div class="stats-left">

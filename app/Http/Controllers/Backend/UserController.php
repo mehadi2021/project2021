@@ -32,8 +32,7 @@ class UserController extends Controller
              return redirect()->route('admin')->with('success','login Successful.....');
          }
          else
-         return redirect()->back();
-         return redirect()->route('admin')->with('success','email not found...!');
+         return redirect()->route('admin.page')->with('success','<strong>Sorry!</strong> email and password not match...!');
      }
 
      public function logout(){

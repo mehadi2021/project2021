@@ -9,6 +9,18 @@
     Add member
 </a>
 </div>
+<br>
+@if(session('success'))
+    <div class="alert alert-success">
+        {!!  session ('success')  !!}
+    </div>
+@endif
+
+ @if(session('error'))
+    <div class="alert alert-danger">
+           { !! session('error') !! }
+    </div>
+@endif
 
 
 <div class=container >
@@ -17,7 +29,7 @@
     <thead class= "table-dark">
       <tr>
           <th scope="col">#</th>
-        <th scope="col">Name</th>
+        <th scope="col">Member ID</th>
         <th scope="col">Account no</th>
          <th scope="col">phn_no</th>
         <th scope="col">Branch Name</th>
@@ -35,8 +47,8 @@
     <td>{{ $news->branch}}</td>
 
     <td style="text-align:center;"> <a class="btn btn-info" href="{{route('admin.members.details',$news->id)}}" role="button">details</a>
-        <a class="btn btn-primary" href="" role="button">edit</a>
-        <a class="btn btn-danger" href="{{ route('admin.members.delete',$news->id)}}" role="button">delete</a></td>
+        <a class="btn btn-primary" href="{{ route('admin.members.edit',$news->id) }}" role="button">edit</a>
+        <a onclick="return confirm('Are You Sure?')" class="btn btn-danger" href="{{ route('admin.members.delete',$news->id)}}" role="button">delete</a></td>
 
     </tr>
 

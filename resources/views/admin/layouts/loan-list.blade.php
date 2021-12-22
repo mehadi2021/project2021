@@ -37,7 +37,7 @@
            <td>{{$data->payment_schedule}}</td>
            <td>{{$data->due_date}}</td>
             <td><a class="btn btn-primary" href="" role="button">edit</a>
-             <a class="btn btn-danger" href="{{ route('admin.loan.delete',$data->id) }}" role="button">delete</a></td>
+             <a onclick="return confirm('Are You Sure?')" class="btn btn-danger" href="{{ route('admin.loan.delete',$data->id) }}" role="button">delete</a></td>
 
 
         </tr>

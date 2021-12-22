@@ -104,7 +104,7 @@
                 <a class="nav-link" href="{{route('user.logout')}}">logout</a>
               </li>
                            <li class="nav-item">
-                <a class="nav-link" href="contact.html">{{auth()->user()->name}}</a>
+                <a class="nav-link" href="contact.html">{{ucwords(auth()->user()->name)}}</a>
               </li>
                     @else
                         <li class="nav-item">

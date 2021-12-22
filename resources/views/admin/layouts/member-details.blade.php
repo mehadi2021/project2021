@@ -37,6 +37,7 @@
                 </ul>
 
                 <a class="btn btn-theme" href="#">Print Now</a>
+                 <a class="btn btn-theme" href="{{route('admin.members.list'); }}"> Return Back</a>
               </div>
 
               <!-- end custombox -->

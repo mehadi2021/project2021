@@ -49,6 +49,9 @@ Route::get('/',[DashboardController ::class,'dashboard'])->name('admin');
     Route::get('/members/member-list',[MemberController::class,'member_list'])->name('admin.members.list');
    Route::get('/members/member-list/details/{id}',[MemberController::class,'member_details'])->name('admin.members.details');
  Route::get('/members/member-list/delete/{id}',[MemberController::class,'member_delete'])->name('admin.members.delete');
+  Route::get('/members/member-list/edit/{id}',[MemberController::class,'member_edit'])->name('admin.members.edit');
+   Route::put('/members/member-list/update/{id}',[MemberController::class,'member_update'])->name('admin.members.update');
+  Route::get('/members/member/ha',[MemberController::class,'mehadi']);
 
 
 
@@ -86,7 +89,6 @@ Route::group(['prefix'=>'user-portal'],function(){
 // Route::get('/',[UController::class,'home'])->name('user');
 
 Route::post('/registration',[UController::class,'registration'])->name('user.registration');
-Route::get('/service',[UController::class,'ser'])->name('user.ser');
 Route::post('/login/post',[UController::class,'userLogin'])->name('user.do.login');
 Route::get('/user/logout',[UController::class,'userLogout'])->name('user.logout');
 Route::group(['middleware'=>'auth'],function(){
