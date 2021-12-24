@@ -80,7 +80,7 @@
 
          <label class="control-label col-md-3 col-sm-3 col-xs-3">Payment Schedule</label>
                  <div class="col-md-9 col-sm-9 col-xs-9">
-                    <input type="text"  name="payment_schedule" class="form-control" placeholder=" Enter Your Payment Schedule" data-inputmask="'mask': '99/99/9999'">
+                    <input type="date"  name="payment_schedule" class="form-control" placeholder=" Enter Your Payment Schedule" data-inputmask="'mask': '99/99/9999'">
                 </div>
     </div>
 
@@ -88,7 +88,7 @@
 
          <label class="control-label col-md-3 col-sm-3 col-xs-3">Due Date</label>
                  <div class="col-md-9 col-sm-9 col-xs-9">
-                    <input type="text"  name="due_date"  class="form-control" placeholder=" Enter Your due date" data-inputmask="'mask': '99/99/9999'">
+                    <input type="date"  name="due_date"  class="form-control" placeholder=" Enter Your due date" data-inputmask="'mask': '99/99/9999'">
                 </div>
     </div>
 

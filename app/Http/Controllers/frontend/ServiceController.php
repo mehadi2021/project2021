@@ -1,7 +1,8 @@
 <?php
 
 namespace App\Http\Controllers\frontend;
-
+use App\Models\Branch;
+use App\Models\Member;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
@@ -12,9 +13,29 @@ class ServiceController extends Controller
     return view('website.pages.service');
 
     }
-     public function ser()
+ public function deposit()
     {
-    return view('website.pages.ser');
+          $branches=Branch::all();
+         return view('website.pages.deposit', compact('branches'));
 
     }
+    public function loan()
+    {
+    return view('website.pages.loan');
+
+    }
+    public function profile()
+    {
+          $members=Member::all();
+         return view('website.pages.member-profile', compact('members'));
+
+    }
+
+
+
+
+
+
+
+
 }

@@ -2,6 +2,8 @@
 namespace App\Http\Controllers\Backend;
 use App\Http\Controllers\frontend\UserController as UController;
 use App\Http\Controllers\frontend\ServiceController;
+ use App\Http\Controllers\frontend\DepositController;
+  use App\Http\Controllers\frontend\ReportController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -55,10 +57,34 @@ Route::get('/',[DashboardController ::class,'dashboard'])->name('admin');
 
 
 
-    Route::get('/news pages/news',[NewsController::class,'news_create'])->name('admin.news.add');
+
+     Route::get('/components/branch',[BranchController::class,'branch'])->name('admin.branch');
+    Route::get('/components/branch/add new branch',[BranchController::class,'branch_create'])->name('admin.branch.add');
+    Route::post('/components/branch/add new branch',[BranchController::class,'branch_store'])->name('admin.branch.store');
+ Route::get('/components/branch',[BranchController::class,'branch_list'])->name('admin.branch.list');
+
+
+
+
+    Route::get('/components/loan',[New_loanController::class,'loan_list'])->name('admin.loan.new');
+    Route::get('/components/loan/add new loan',[New_loanController::class,'loan_create'])->name('admin.new.create');
+    Route::post('/components/loan/add new loan',[New_loanController::class,'loan_store'])->name('admin.new.store');
+
+
+
+
+
+     Route::get('/news pages/news',[NewsController::class,'news_create'])->name('admin.news.add');
     Route::post('/news pages/news',[NewsController::class,'news_store'])->name('admin.news.store');
     Route::get('/news pages/news details',[NewsController::class,'news_list'])->name('admin.news.list');
      Route::get('/news pages/news details/delete/{id}',[NewsController::class,'news_delete'])->name('admin.news.delete');
+
+
+
+
+
+
+
 
 
 
@@ -93,6 +119,14 @@ Route::post('/login/post',[UController::class,'userLogin'])->name('user.do.login
 Route::get('/user/logout',[UController::class,'userLogout'])->name('user.logout');
 Route::group(['middleware'=>'auth'],function(){
 Route::get('/service',[ServiceController::class,'service'])->name('user.service');
+Route::get('/service/deposit',[ServiceController::class,'deposit'])->name('user.deposit');
+Route::post('/service',[DepositController::class,'store'])->name('deposit.store');
+Route::get('/service/loan request',[ServiceController::class,'loan'])->name('user.loan');
+ Route::get('/service/profile',[ServiceController::class,'profile'])->name('user.profile');
+// Route::post('/service',[LoanRequestController::class,'loan_store'])->name('user.loan.store');
+Route::get('/report',[ReportController::class,'report'])->name('user.report');
+Route::get('/service/loan request',[New_loanController::class,'loan_request'])->name('user.loan');
+
 });
 
 
