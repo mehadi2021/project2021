@@ -53,8 +53,8 @@ class MemberController extends Controller
               public function member_list()
     {
 
-         $list=Member::all();
-         return view('admin.layouts.member-list', compact('list'));
+         $list=Member::orderBy('id','desc')->paginate(1);
+        return view('admin.layouts.member-list', compact('list'));
      }
              public function member_details($id)
              {
@@ -81,17 +81,24 @@ class MemberController extends Controller
              }
              public function member_update(Request $request,$id)
              {
-                $request->validate([
-            'user_id'=>'required|unique:members|alpha_num|min:5|max:8',
-            'dob'=>'required',
-            'address'=>'required|alpha',
-            'gender'=>'required',
-            'voter_id'=>'required|unique:members',
-            'phon_no'=>'required|digits:11',
-            'account_no'=>'required|numeric|min:6',
-            'branch'=>'required|alpha'
-        ]);
+        //         $request->validate([
+        //     'user_id'=>'required|unique:members|alpha_num|min:5|max:8',
+        //     'dob'=>'required',
+        //     'address'=>'required|alpha',
+        //     'gender'=>'required',
+        //     'voter_id'=>'required|unique:members',
+        //     'phon_no'=>'required|digits:11',
+        //     'account_no'=>'required|numeric|min:6',
+        //     'branch'=>'required|alpha'
+        // ]);
       $list=Member::find($id);
+      $filename =$list->image;
+                    if($request->hasFile('members_image'))
+                    {
+                        $file= $request->file('members_image');
+                        $filename= date ('Ymdhms').'.'.$file->getClientOriginalExtension();
+                        $file->storeAs('/uploads', $filename);
+                    }
         $list->update([
              'user_id'=>$request->user_id,
             'dob'=>$request->dob,
@@ -100,16 +107,35 @@ class MemberController extends Controller
             'voter_id'=>$request->voter_id,
             'phon_no'=>$request->phon_no,
             'account_no'=>$request->account_no,
-            'branch'=>$request->branch
+            'branch'=>$request->branch,
+             'image'=>$filename
         ]);
                  return redirect()->route('admin.members.list')->with('success','Update Successful');
              }
 
-
-
-   public function mehadi()
+  public function mehadi1()
              {
-            return  interest(5,7,9);
+
+           return  view('website.pages.calculation');
              }
+
+   public function mehadi(Request $request)
+             {
+ $me=$request->m;
+ $md=$request->mh;
+ $mr=$request->mhr;
+// dd($me);
+             return  interest($me,$md,$mr);
+             }
+
+
+               public function member_search()
+    {
+
+           $key = request()->search;
+        $list= Member::where('user_id','LIKE',"%{$key}%")->get();
+        // dd($list);
+        return view('admin.layouts.member-search', compact('list'));
+     }
 
     }

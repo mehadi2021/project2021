@@ -44,7 +44,7 @@
     @endif
  @if(session('error'))
     <div class="alert alert-danger" style="text-align:center;">
-           { !! session('error') !! }
+           { !!  session('error')  !! }
     </div>
 @endif
 

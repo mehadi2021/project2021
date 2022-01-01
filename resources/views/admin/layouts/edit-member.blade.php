@@ -105,6 +105,13 @@
                     <input type="text"  name="branch"  class="form-control" required  placeholder=" Enter Your Branch Name" value="{{ old('branch',$lis->branch)}}" data-inputmask="'mask': '99/99/9999'">
                 </div>
     </div>
+     <div class="form-group row">
+
+         <label class="control-label col-md-3 col-sm-3 col-xs-3">Upload Image</label>
+                 <div class="col-md-9 col-sm-9 col-xs-9">
+                    <input type="file" name="members_image"  class="form-control"   data-inputmask="'mask': '99/99/9999'">
+                </div>
+    </div>
 
     <div class="form-group row">
          <div class="col-md-9 offset-md-3">

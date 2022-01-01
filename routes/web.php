@@ -28,7 +28,7 @@ Route::group(['prefix'=>'admin-portal'],function(){
  Route::get('/login',[UserController ::class,'page'])->name('admin.page');
   Route::post('/login',[UserController ::class,'log'])->name('admin.log');
 
-Route::group(['middleware'=>'auth'],function(){
+Route::group(['middleware'=>['auth','admin']],function(){
 Route::get('/logout',[UserController ::class,'logout'])->name('admin.logout');
 Route::get('/',[DashboardController ::class,'dashboard'])->name('admin');
 
@@ -37,8 +37,9 @@ Route::get('/',[DashboardController ::class,'dashboard'])->name('admin');
 
 
 
-    Route::get('/image/mehadi.jpg',[UserController::class,'profile'])->name('admin.profile');
-     Route::get('/image/mehadi.jpg/profile-edit',[UserController::class,'edit'])->name('admin.edit');
+     Route::get('/administrator',[UserController::class,'profile'])->name('admin.profile');
+    Route::get('/administrator/profile-edit',[UserController::class,'edit'])->name('admin.edit');
+  Route::get('/administrator/registration',[Admin_loginController::class,'registration'])->name('admin.registration');
 
 
 
@@ -53,7 +54,9 @@ Route::get('/',[DashboardController ::class,'dashboard'])->name('admin');
  Route::get('/members/member-list/delete/{id}',[MemberController::class,'member_delete'])->name('admin.members.delete');
   Route::get('/members/member-list/edit/{id}',[MemberController::class,'member_edit'])->name('admin.members.edit');
    Route::put('/members/member-list/update/{id}',[MemberController::class,'member_update'])->name('admin.members.update');
-  Route::get('/members/member/ha',[MemberController::class,'mehadi']);
+
+       Route::get('/members/search',[MemberController::class,'member_search'])->name('admin.members.search');
+
 
 
 
@@ -126,7 +129,8 @@ Route::get('/service/loan request',[ServiceController::class,'loan'])->name('use
 // Route::post('/service',[LoanRequestController::class,'loan_store'])->name('user.loan.store');
 Route::get('/report',[ReportController::class,'report'])->name('user.report');
 Route::get('/service/loan request',[New_loanController::class,'loan_request'])->name('user.loan');
-
+Route::get('/service/calculation',[MemberController::class,'mehadi1']);
+Route::post('/service/calculation',[MemberController::class,'mehadi']);
 });
 
 

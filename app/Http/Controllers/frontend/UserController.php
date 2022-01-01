@@ -17,18 +17,29 @@ class UserController extends Controller
     public function registration(Request $request)
     {
         //validate this request
+        dd($request->all());
         $request->validate([
            'username'=>'required',
            'email'=>'email|required',
            'password'=>'required',
-           'mobile'=>'required|digits:10',
+           'mobile'=>'required|digits:11',
         ]);
+
+         $filename = "";
+                    if($request->hasFile('image'))
+                    {
+                        $file= $request->file('image');
+                        $filename= date ('Ymdhms').'.'.$file->getClientOriginalExtension();
+                        $file->storeAs('/uploads', $filename);
+                    }
 
         User::create([
            'name'=>$request->username,
            'email'=>$request->email,
            'password'=>bcrypt($request->password),
            'mobile'=>$request->mobile,
+           'role'=>$request->role->default('user'),
+          'image'=>$filename
         ]);
 
         return redirect()->back()->with('batch','Registration Successful.');
@@ -47,7 +58,6 @@ class UserController extends Controller
              return redirect()->back()->with('batch','login Successful.');;
          }
          else
-         return redirect()->back();
          return redirect()->back()->with('batch','email not found.');
      }
 
