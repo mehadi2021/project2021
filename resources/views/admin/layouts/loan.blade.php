@@ -38,60 +38,120 @@
 
 
 
-        <div class="form-group row">
-         <label class="control-label col-md-3 col-sm-3 col-xs-3">User ID</label>
+     @csrf
+<div class="form-group row">
+         <label class="control-label col-md-3 col-sm-3 col-xs-3">Member ID</label>
                  <div class="col-md-9 col-sm-9 col-xs-9">
-                     <input type="text" name="member_id" class="form-control" placeholder=" Enter your amount" data-inputmask="'mask' : '(999) 999-9999'">
+                     <input type="text" name="member_id"  class="form-control"  required placeholder=" Enter your Member ID" data-inputmask="'mask' : '(999) 999-9999'">
                 </div>
      </div>
+     <div class="form-group row">
+         <label class="control-label col-md-3 col-sm-3 col-xs-3">Enter Member Name</label>
+                 <div class="col-md-9 col-sm-9 col-xs-9">
+                     <input type="text" name="member_name" class="form-control" placeholder=" Enter your Name" data-inputmask="'mask' : '(999) 999-9999'">
+              </div>
+    </div>
+    <div class="form-group row">
+         <label class="control-label col-md-3 col-sm-3 col-xs-3">Enter Account No</label>
+                 <div class="col-md-9 col-sm-9 col-xs-9">
+                     <input type="text" name="ac_no" class="form-control" placeholder=" Enter your Name" data-inputmask="'mask' : '(999) 999-9999'">
+              </div>
+    </div>
+
+ <div class="form-group row">
+         <label class="control-label col-md-3 col-sm-3 col-xs-3">Types of Loan</label>
+                 <div class="col-md-9 col-sm-9 col-xs-9">
+
+                      <select class="form-control" name="type" id=""   aria-label="Default select example" required>
+
+                        <option value="Null" >select from here</option>
+                        @foreach($list as $lists)
+                       <option value="{{ $lists->amount }}">{{ $lists->name }}</option>
+ @endforeach
+                      </select>
+
+</div>
+     </div>
+
 
     <div class="form-group row">
          <label class="control-label col-md-3 col-sm-3 col-xs-3">Loan Amount</label>
                  <div class="col-md-9 col-sm-9 col-xs-9">
-                     <input type="text" name="loan_amount" class="form-control" placeholder=" Enter your amount" data-inputmask="'mask' : '(999) 999-9999'">
-                </div>
+
+                      <select class="form-control" name="loan_amount" id=""   aria-label="Default select example" required>
+
+                        <option value="Null" >select from here</option>
+                        @foreach($list as $lists)
+                       <option value="{{ $lists->amount }}">{{ $lists->amount }}</option>
+ @endforeach
+                      </select>
+
+</div>
      </div>
+  <div class="form-group row">
+
+         <label class="control-label col-md-3 col-sm-3 col-xs-3">Loan Rate</label>
+                 <div class="col-md-9 col-sm-9 col-xs-9">
+   <select class="form-control" name="rate" id=""   aria-label="Default select example" required>
+
+                        <option value="Null" >select from here</option>
+                        @foreach($list as $lists)
+                       <option value="{{ $lists->interest }}" >{{ $lists->rate }}</option>
+ @endforeach
+                      </select>
+                       </div>
+                     </div>
+
+                       <div class="form-group row">
+
+         <label class="control-label col-md-3 col-sm-3 col-xs-3">Loan Time</label>
+                 <div class="col-md-9 col-sm-9 col-xs-9">
+   <select class="form-control" name="time" id=""   aria-label="Default select example" required>
+
+                        <option value="Null" >select from here</option>
+                        @foreach($list as $lists)
+                       <option value="{{ $lists->interest }}" >{{ $lists->time }}</option>
+ @endforeach
+                      </select>
+                       </div>
+                     </div>
+
 
       <div class="form-group row">
 
          <label class="control-label col-md-3 col-sm-3 col-xs-3">Loan Interest</label>
                  <div class="col-md-9 col-sm-9 col-xs-9">
-                    <input type="text"  name="loan_interest" class="form-control" placeholder=" Enter Your loan interest" data-inputmask="'mask': '99/99/9999'">
-                </div>
-    </div>
+   <select class="form-control" name="interest" id=""   aria-label="Default select example" required>
 
-     <div class="form-group row">
-
-         <label class="control-label col-md-3 col-sm-3 col-xs-3">Payment Term</label>
-                 <div class="col-md-9 col-sm-9 col-xs-9">
-                    <input type="text"  name="payment_term" class="form-control" placeholder=" Enter Your payment term" data-inputmask="'mask': '99/99/9999'">
-                </div>
-    </div>
-
-     <div class="form-group row">
-
-         <label class="control-label col-md-3 col-sm-3 col-xs-3">Total Amount Interest</label>
-                 <div class="col-md-9 col-sm-9 col-xs-9">
-                    <input type="text"  name="total_amount_interest"  class="form-control" placeholder=" Enter Your total amount interest" data-inputmask="'mask': '99/99/9999'">
-                </div>
-    </div>
-
-     <div class="form-group row">
-
-         <label class="control-label col-md-3 col-sm-3 col-xs-3">Payment Schedule</label>
-                 <div class="col-md-9 col-sm-9 col-xs-9">
-                    <input type="date"  name="payment_schedule" class="form-control" placeholder=" Enter Your Payment Schedule" data-inputmask="'mask': '99/99/9999'">
-                </div>
-    </div>
+                        <option value="Null" >select from here</option>
+                        @foreach($list as $lists)
+                       <option value="{{ $lists->interest }}" >{{ $lists->interest }}</option>
+ @endforeach
+                      </select>
+                       </div>
+                     </div>
 
     <div class="form-group row">
 
-         <label class="control-label col-md-3 col-sm-3 col-xs-3">Due Date</label>
+         <label class="control-label col-md-3 col-sm-3 col-xs-3">Loan EMI</label>
                  <div class="col-md-9 col-sm-9 col-xs-9">
-                    <input type="date"  name="due_date"  class="form-control" placeholder=" Enter Your due date" data-inputmask="'mask': '99/99/9999'">
+   <select class="form-control" name="emi" id=""   aria-label="Default select example" required>
+
+                        <option value="Null" >select from here</option>
+                        @foreach($list as $lists)
+                       <option value="{{ $lists->interest }}" >{{ $lists->emi}}</option>
+ @endforeach
+                      </select>
+                       </div>
+                     </div>
+
+     <div class="form-group row">
+
+         <label class="control-label col-md-3 col-sm-3 col-xs-3">Payment Date</label>
+                 <div class="col-md-9 col-sm-9 col-xs-9">
+                    <input type="date"  name="payment_date"  class="form-control" placeholder=" Enter Your total amount interest" data-inputmask="'mask': '99/99/9999'">
                 </div>
     </div>
-
 
     <div class="form-group row">
          <div class="col-md-9 offset-md-3">
@@ -102,5 +162,4 @@
      </div>
 
 </form>
-
 @endsection

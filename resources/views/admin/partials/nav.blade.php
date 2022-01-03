@@ -69,7 +69,7 @@
               </a>
             <ul class="sub">
               <li><a href="basic_table.html">Add Money</a></li>
-              <li><a href="responsive_table.html">View deposit Details</a></li>
+              <li><a href="{{ route('admin.deposit.list') }}">Deposit Status</a></li>
               <li><a href="advanced_table.html">Advanced Table</a></li>
             </ul>
           </li>

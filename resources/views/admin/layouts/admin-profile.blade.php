@@ -3,6 +3,12 @@
 
 <h1 style="text-align: center; color:black;">Administrator Information</h1>
 
+@if(session('success'))
+    <div class="alert alert-success">
+        {!!  session ('success')  !!}
+    </div>
+@endif
+
            <div class="row content-panel" style="margin-left:10px;">
               <div class="col-md-4 profile-text mt mb centered">
                 <div class="right-divider hidden-sm hidden-xs">
@@ -26,7 +32,7 @@
               <!-- /col-md-4 -->
               <div class="col-md-4 centered">
                 <div class="profile-pic">
-                  <p><img src="{{ url('img/mehadi.jpeg') }}" class="img-circle"></p>
+                  <p><img src="{{url('/uploads/'.auth()->user()->image)}}"class="img-circle"></p>
                   <p>
                     <button class="btn btn-theme"><i class="fa fa-check"></i> Follow</button>
                       <a href="{{route ('admin.registration') }}" class="btn btn-theme02" >Registration</a>

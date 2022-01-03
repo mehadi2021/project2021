@@ -36,6 +36,13 @@
  @csrf
  @method('put')
 
+  <div class="form-group row">
+
+         <label class="control-label col-md-3 col-sm-3 col-xs-3">Member Name</label>
+                 <div class="col-md-9 col-sm-9 col-xs-9">
+                    <input type="text"  name="name" class="form-control" required placeholder=" Enter Your member id"  value="{{ old('user_id',$lis->name )}}"data-inputmask="'mask': '99/99/9999'">
+                </div>
+    </div>
    <div class="form-group row">
 
          <label class="control-label col-md-3 col-sm-3 col-xs-3">Member ID</label>

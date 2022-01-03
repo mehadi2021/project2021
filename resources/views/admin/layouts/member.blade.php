@@ -34,12 +34,21 @@
 
 <form action="{{route('admin.members.store')}}" class="form-horizontal form-label-left"  method="post" enctype="multipart/form-data">
  @csrf
+    <div class="form-group row">
+
+         <label class="control-label col-md-3 col-sm-3 col-xs-3">Member Name</label>
+                 <div class="col-md-9 col-sm-9 col-xs-9">
+                    <input type="text"  name="name" class="form-control" required placeholder=" Enter Your member id" data-inputmask="'mask': '99/99/9999'">
+                </div>
+    </div>
+
+
 
    <div class="form-group row">
 
          <label class="control-label col-md-3 col-sm-3 col-xs-3">Member ID</label>
                  <div class="col-md-9 col-sm-9 col-xs-9">
-                    <input type="text"  name="user_id" class="form-control" required placeholder=" Enter Your member id" data-inputmask="'mask': '99/99/9999'">
+                    <input type="text"  name="member_id" class="form-control" required placeholder=" Enter Your member id" data-inputmask="'mask': '99/99/9999'">
                 </div>
     </div>
 
@@ -101,8 +110,16 @@
 
          <label class="control-label col-md-3 col-sm-3 col-xs-3">Branch Name</label>
                  <div class="col-md-9 col-sm-9 col-xs-9">
-                    <input type="text"  name="branch"  class="form-control" required  placeholder=" Enter Your Branch Name" data-inputmask="'mask': '99/99/9999'">
-                </div>
+
+                      <select class="form-control" name="branch" id=""   aria-label="Default select example" required>
+  <option value="Null" >select from here</option>
+                        @foreach($branches as $branch)
+
+                       <option value="{{ $branch->name }}">{{ $branch->name }}</option>
+@endforeach
+                      </select>
+
+                        </div>
     </div>
 
 

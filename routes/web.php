@@ -2,8 +2,9 @@
 namespace App\Http\Controllers\Backend;
 use App\Http\Controllers\frontend\UserController as UController;
 use App\Http\Controllers\frontend\ServiceController;
- use App\Http\Controllers\frontend\DepositController;
+ use App\Http\Controllers\frontend\DepositController as DController;
   use App\Http\Controllers\frontend\ReportController;
+  use App\Http\Controllers\frontend\LoanRequestController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -36,10 +37,11 @@ Route::get('/',[DashboardController ::class,'dashboard'])->name('admin');
 
 
 
-
      Route::get('/administrator',[UserController::class,'profile'])->name('admin.profile');
     Route::get('/administrator/profile-edit',[UserController::class,'edit'])->name('admin.edit');
-  Route::get('/administrator/registration',[Admin_loginController::class,'registration'])->name('admin.registration');
+  Route::get('/administrator/registration',[UserController::class,'registration'])->name('admin.registration');
+ Route::post('/administrator/registration',[UserController::class,'store'])->name('admin.store');
+
 
 
 
@@ -91,10 +93,14 @@ Route::get('/',[DashboardController ::class,'dashboard'])->name('admin');
 
 
 
-    Route::get('/loan/loan request',[LoanRequestController::class,'loan_add'])->name('admin.loan.add');
-    Route::post('/loan/loan request',[LoanRequestController::class,'loan_store'])->name('admin.loan.store');
-    Route::get('/loan/loan status',[LoanRequestController::class,'loan_list'])->name('admin.loan.list');
-    Route::get('/loan/loan status/delete/{id}',[LoanRequestController::class,'loan_delete'])->name('admin.loan.delete');
+    Route::get('/loan/loan request',[LoanController::class,'loan_add'])->name('admin.loan.add');
+    Route::post('/loan/loan request',[LoanController::class,'loan_store'])->name('admin.loan.store');
+    Route::get('/loan/loan status',[LoanController::class,'loan_list'])->name('admin.loan.list');
+    Route::get('/loan/loan status/delete/{id}',[LoanController::class,'loan_delete'])->name('admin.loan.delete');
+
+    Route::get('/deposit/deposit status',[DepositController::class,'deposit_list'])->name('admin.deposit.list');
+
+
 
 
 });
@@ -119,12 +125,21 @@ Route::group(['prefix'=>'user-portal'],function(){
 
 Route::post('/registration',[UController::class,'registration'])->name('user.registration');
 Route::post('/login/post',[UController::class,'userLogin'])->name('user.do.login');
-Route::get('/user/logout',[UController::class,'userLogout'])->name('user.logout');
+
 Route::group(['middleware'=>'auth'],function(){
+    Route::get('/user/logout',[UController::class,'userLogout'])->name('user.logout');
 Route::get('/service',[ServiceController::class,'service'])->name('user.service');
+
+
 Route::get('/service/deposit',[ServiceController::class,'deposit'])->name('user.deposit');
-Route::post('/service',[DepositController::class,'store'])->name('deposit.store');
+Route::post('/service/deposit',[DController::class,'store'])->name('deposit.store');
+
+
+
 Route::get('/service/loan request',[ServiceController::class,'loan'])->name('user.loan');
+Route::post('/service/loan request',[LoanRequestController::class,'loan_store'])->name('user.loan.store');
+
+
  Route::get('/service/profile',[ServiceController::class,'profile'])->name('user.profile');
 // Route::post('/service',[LoanRequestController::class,'loan_store'])->name('user.loan.store');
 Route::get('/report',[ReportController::class,'report'])->name('user.report');

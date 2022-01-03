@@ -8,7 +8,7 @@
 
 
 
- <form action="{{route('user.registration')}}" method="post" enctype="multipart/form-data">
+ <form action="{{route('admin.store')}}" method="post" enctype="multipart/form-data">
                     @csrf
 
 

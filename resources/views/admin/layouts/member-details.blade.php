@@ -19,22 +19,30 @@
                 <br>
 
                 <div class="icn-main-container" >
+@foreach ($list as  $lists )
+
 
                    <img src="{{url('/uploads/'.$lists->image)}}" class="img-square" width="150" height="120" alt="member image">
                 </div>
                 <br>
                 <br>
-                <ul class="pricing">
-                  <li>Member Name:</li>
-                  <li>Member ID:{{$lists->id}}</li>
-                    <li>NID Number</li>
-                  <li>Account Number:</li>
-                  <li>Total Amount:</li>
-                  <li>Date of Birth:</li>
+                <ul class="pricing" style="font-size:70px;">
+                  <li>Member Name:{{$lists->name}}</li>
+                  <li>Member ID:{{$lists->member_id}}</li>
+                 <li>NID Number:{{$lists->voter_id}}</li>
+                  <li>Account Number:{{$lists->account_number}}</li>
+
+                  <li>Date of Birth:{{$lists->dob}}</li>
                   <li>Email Address:</li>
-                  <li>Address:</li>
+                  <li>Address:{{$lists->address}}</li>
                 </ul>
               </div>
+@endforeach
+@foreach ($me as $mes )
+<li>Total Amount:{{$mes->amount}}</li>
+@endforeach
+
+
 
           </div>
         </div></div>

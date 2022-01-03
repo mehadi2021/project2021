@@ -23,12 +23,15 @@ public function loan_store(Request $request )
         //   ]);
           Loan::create([
           'member_id'=>$request->member_id,
+         'member_name'=>$request->member_name,
+           'ac_no'=>$request->ac_no,
+           'type'=>$request->type,
           'loan_amount'=>$request->loan_amount,
-          'loan_interest'=>$request->loan_interest,
-          'payment_term'=>$request->payment_term,
-          'total_amount_interest'=>$request->total_amount_interest,
-          'payment_schedule'=>$request->payment_schedule,
-          'due_date'=>$request->due_date,
+          'rate'=>$request->rate,
+          'time'=>$request->time,
+          'interest'=>$request->interest,
+          'emi'=>$request->emi,
+          'payment_date'=>$request->payment_date,
 
            ]);
            return redirect()->back()->with('success','Data entry successfully');

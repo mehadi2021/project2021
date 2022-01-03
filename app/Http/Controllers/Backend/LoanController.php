@@ -2,15 +2,17 @@
 
 namespace App\Http\Controllers\Backend;
 use App\Models\Loan;
+use App\Models\Add_loan;
 use App\Http\Controllers\Controller;
 use App\Models\user_request;
 use Illuminate\Http\Request;
 
-class LoanRequestController extends Controller
+class LoanController extends Controller
 {
     public function loan_add()
     {
-        return view('admin.layouts.loan');
+        $list=Add_loan::all();
+        return view('admin.layouts.loan',compact('list'));
     }
 
      public function loan_store(Request $request )
@@ -28,20 +30,23 @@ class LoanRequestController extends Controller
            ]);
            Loan::create([
           'member_id'=>$request->member_id,
+         'member_name'=>$request->member_name,
+           'ac_no'=>$request->ac_no,
+           'type'=>$request->type,
           'loan_amount'=>$request->loan_amount,
-          'loan_interest'=>$request->loan_interest,
-          'payment_term'=>$request->payment_term,
-          'total_amount_interest'=>$request->total_amount_interest,
-          'payment_schedule'=>$request->payment_schedule,
-          'due_date'=>$request->due_date,
+          'rate'=>$request->rate,
+          'time'=>$request->time,
+          'interest'=>$request->interest,
+          'emi'=>$request->emi,
+          'payment_date'=>$request->payment_date,
 
            ]);
            return redirect()->back()->with('success','Data entry successfully');
 
     }
     public function loan_list(){
-         $list=Loan::all();
-         return view('admin.layouts.loan-list', compact('list'));
+         $lists=Loan::all();
+         return view('admin.layouts.loan-list', compact('lists'));
      }
       public function loan_delete($id)
       {

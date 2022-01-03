@@ -38,7 +38,7 @@
 
 					</div>
 					<div class="col-md-3 widget states-last"  style=" background-color: #263544; color:white; padding-top:10px;  text-align:center;  margin:40px;">
-				4
+			 <div class="count-digit">{{$loans}}</div>
 						<div class="stats-left">
 							<h5>Total</h5>
 							<h4>Loan Request</h4>

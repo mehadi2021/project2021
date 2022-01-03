@@ -78,26 +78,25 @@
   <!--script for this page-->
   <script src="{{ url('lib/sparkline-chart.js') }}"></script>
   <script src="{{ url('lib/zabuto_calendar.js') }}"></script>
-  <script type="{{ url('text/javascript') }}">
+  <script type="text/javascript">
     $(document).ready(function() {
       var unique_id = $.gritter.add({
-         (string | mandatory) the heading of the notification
-        title: 'Co-Operative System!',
-         (string | mandatory) the text inside the notification
+        // (string | mandatory) the heading of the notification
+        title: 'Welcome to {{ucwords(auth()->user()->name)}}',
+        // (string | mandatory) the text inside the notification
         text: 'Hover me to enable the Close Button. You can hide the left sidebar clicking on the button next to the logo.',
-         (string | optional) the image to display on the left
-        image: 'img/mehadi.jpg',
-         (bool | optional) if you want it to fade out on its own or just sit there
+        // (string | optional) the image to display on the left
+        image: "{{url('/uploads/'.auth()->user()->image)}}",
+        // (bool | optional) if you want it to fade out on its own or just sit there
         sticky: false,
-         (int | optional) the time you want it to be alive for before fading out
+        // (int | optional) the time you want it to be alive for before fading out
         time: 8000,
-         (string | optional) the class name you want to apply to that specific message
+        // (string | optional) the class name you want to apply to that specific message
         class_name: 'my-sticky-class'
       });
 
       return false;
     });
-
   </script>
   <script type="application/javascript">
     $(document).ready(function() {
@@ -142,4 +141,5 @@
     }
   </script>
 </body>
+
 </html>

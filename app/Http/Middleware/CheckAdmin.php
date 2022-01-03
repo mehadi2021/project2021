@@ -20,7 +20,7 @@ class CheckAdmin
         return $next($request);
         }
         else{
-            return view('user.registration')->with('error','Permission Denied!!');
+            return redirect()->route('admin.page')->with('success','Permission Denied!!');
         }
     }
 }

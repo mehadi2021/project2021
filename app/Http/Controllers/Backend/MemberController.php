@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers\Backend;
 use App\Http\Controllers\Controller;
+use App\Models\Branch;
+use App\Models\Deposit;
 use App\Helpers;
 use App\Models\Member;
 use Illuminate\Http\Request;
@@ -10,14 +12,15 @@ class MemberController extends Controller
 {
  public function member_create()
     {
-        return view('admin.layouts.member');
+        $branches=Branch::all();
+         return view('admin.layouts.member', compact('branches'));
 
     }
 
       public function  member_store (Request $request)
     {
           $request->validate([
-            'user_id'=>'required|unique:members|alpha_num|min:5|max:8',
+            'member_id'=>'required|unique:members|alpha_num|min:5|max:8',
             'dob'=>'required',
             'address'=>'required|alpha',
             'gender'=>'required',
@@ -35,7 +38,8 @@ class MemberController extends Controller
                     }
 
                  Member::create([
-            'user_id'=>$request->user_id,
+            'name'=>$request->name,
+            'member_id'=>$request->member_id,
             'dob'=>$request->dob,
             'address'=>$request->address,
             'gender'=>$request->gender,
@@ -58,15 +62,14 @@ class MemberController extends Controller
      }
              public function member_details($id)
              {
-                 $lists=Member::find($id);
-                 return view('admin.layouts.member-details', compact('lists'));
+                 $me=Deposit::where('member_id',$id)->get();
+                 $list=Member::where('member_id',$id)->get();
+                 return view('admin.layouts.member-details', compact('me','list'));
              }
              public function member_delete($id)
              {
                  //dd($id);
                  $lis=Member::find($id);
-
-
                  $lis->delete();
 
 
@@ -100,6 +103,7 @@ class MemberController extends Controller
                         $file->storeAs('/uploads', $filename);
                     }
         $list->update([
+             'name'=>$request->name,
              'user_id'=>$request->user_id,
             'dob'=>$request->dob,
             'address'=>$request->address,

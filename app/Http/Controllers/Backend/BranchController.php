@@ -45,11 +45,11 @@ class BranchController extends Controller
 
     }
 
-    //  public function branch_delete($id){
-    //      $list=Branch::find($id);
-    //      $list->delete();
-    //         return redirect()->back();
-    //  }
+     public function branch_delete($id){
+         $list=Branch::find($id);
+         $list->delete();
+            return redirect()->back();
+     }
 
 }
 

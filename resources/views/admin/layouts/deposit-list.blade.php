@@ -16,10 +16,10 @@
                     </form>
 
     <!-- Button trigger modal -->
-  <h1 class="modal-title text-warning"  style="color:black;text-align:center;"> Add New Loan</h1>
+  <h1 class="modal-title text-warning"  style="color:black;text-align:center;">Deposit List</h1>
 <div class=" text-start">
-<a href="{{ route('admin.loan.add') }}" class="btn btn-info " data-bs-toggle="modal" data-bs-target="#exampleModal">
-    Add New Loan
+<a href="" class="btn btn-info " data-bs-toggle="modal" data-bs-target="#exampleModal">
+    Add New Deposit
 </a>
 </div>
    </header>
@@ -33,35 +33,31 @@
         <th scope="col"> Member  ID</th>
         <th scope="col"> Member Name  </th>
         <th scope="col"> Account No</th>
-        <th scope="col">Loan Amount</th>
-        <th scope="col">Rate</th>
-        <th scope="col">Time</th>
-        <th scope="col">Interest</th>
-            <th scope="col">EMI</th>
-             <th scope="col">Payment Date</th>
+        <th scope="col">Branch</th>
+        <th scope="col">Method</th>
+        <th scope="col">Amount</th>
+        <th scope="col">Date</th>
+            <th scope="col">Transaction</th>
       </tr>
     </thead>
     <tbody>
-@foreach($lists as $key=>$list)
+@foreach($deposits as $key=>$deposit)
 {{-- @dd($data->loanMember->Memberuser); --}}
         <tr>
               <th scope="row">
-          {{$list->member_id}}</th>
-           <td>{{$list->member_name}}</td>
-           <td>{{$list->ac_no}}</td>
-           <td>{{$list->loan_amount}}</td>
-           <td>{{$list->rate}}</td>
-           <td>{{$list->time}}</td>
-           <td>{{$list->interest}}</td>
-           <td>{{$list->emi}}</td>
-           <td>{{$list->payment_date}}</td>
+          {{$deposit->member_id}}</th>
+           <td>{{$deposit->member_name}}</td>
+           <td>{{$deposit->account_no}}</td>
+           <td>{{$deposit->branch}}</td>
+           <td>{{$deposit->method}}</td>
+           <td>{{$deposit->amount}}</td>
+           <td>{{$deposit->date}}</td>
+           <td>{{$deposit->transaction}}</td>
             <td><a class="btn btn-primary" href="" role="button">edit</a>
-             <a onclick="return confirm('Are You Sure?')" class="btn btn-danger" href="{{ route('admin.loan.delete',$list->id) }}" role="button">delete</a></td>
+             <a onclick="return confirm('Are You Sure?')" class="btn btn-danger" href="" role="button">delete</a></td>
 
 
         </tr>
         @endforeach
-
-
-  </table>
+</table>
     @endsection

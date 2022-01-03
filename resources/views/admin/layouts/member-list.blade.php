@@ -13,7 +13,7 @@
                     </form>
 
     <!-- Button trigger modal -->
-    <h1 class="modal-title text-warning"  style="color:black;text-align:center;"> Member  Details</h1>
+    <h1 class="modal-title text-warning"  style="color:black;text-align:center;"> Member  Lists</h1>
 <div class=" text-start">
 <a href="{{route ('admin.members.add') }}" class="btn btn-info " data-bs-toggle="modal" data-bs-target="#exampleModal">
     Add member
@@ -21,7 +21,6 @@
 </div>
    </header>
             </section>
-            <br>
 @if(session('success'))
     <div class="alert alert-success">
         {!!  session ('success')  !!}
@@ -55,12 +54,12 @@
     <tr>
 
     <td>{{ $key+1 }}</td>
-    <td>{{ $news->user_id}}</td>
+    <td>{{ $news->member_id}}</td>
     <td>{{ $news->account_no}}</td>
     <td>{{ $news->phon_no}}</td>
     <td>{{ $news->branch}}</td>
 
-    <td style="text-align:center;"> <a class="btn btn-info" href="{{route('admin.members.details',$news->id)}}" role="button">details</a>
+    <td style="text-align:center;"> <a class="btn btn-info" href="{{route('admin.members.details',$news->member_id)}}" role="button">details</a>
         <a class="btn btn-primary" href="{{ route('admin.members.edit',$news->id) }}" role="button">edit</a>
         <a onclick="return confirm('Are You Sure?')" class="btn btn-danger" href="{{ route('admin.members.delete',$news->id)}}" role="button">delete</a></td>
 
