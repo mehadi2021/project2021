@@ -1,9 +1,12 @@
 @extends('admin.master')
 @section('content')
 
+<div class="col-sm-12">
+            <section class="panel">
+  <h1  style="text-align:center;"><i class="fa fa-angle-right">Information Details</i></h1>
+            </section>
 
-<h1 class="modal-title text-warning"  style="color:black;text-align:center;">Information Details</h1>
-
+<section class="panel">
     <div class="panel-body" >
 
         <div class="row">
@@ -26,15 +29,15 @@
                 </div>
                 <br>
                 <br>
-                <ul class="pricing" style="font-size:70px;">
-                  <li>Member Name:{{$lists->name}}</li>
-                  <li>Member ID:{{$lists->member_id}}</li>
-                 <li>NID Number:{{$lists->voter_id}}</li>
-                  <li>Account Number:{{$lists->account_number}}</li>
+                <ul class="pricing" style="font-size:20px;">
+                  <li style="font-size:20px;">Member Name:&emsp;&emsp;{{$lists->name}}</li>
+                  <li style="font-size:20px;">Member ID:&emsp;&emsp;{{$lists->member_id}}</li>
+                 <li style="font-size:20px;">NID Number:&emsp;&emsp;{{$lists->voter_id}}</li>
+                  <li style="font-size:20px;">Account Number:&emsp;&emsp;{{$lists->account_number}}</li>
 
-                  <li>Date of Birth:{{$lists->dob}}</li>
-                  <li>Email Address:</li>
-                  <li>Address:{{$lists->address}}</li>
+                  <li style="font-size:20px;">Date of Birth:&emsp;&emsp;{{$lists->dob}}</li>
+                  <li style="font-size:20px;">Email Address:&emsp;&emsp;</li>
+                  <li style="font-size:20px;">Address:&emsp;&emsp;{{$lists->address}}</li>
                 </ul>
               </div>
 @endforeach
@@ -46,16 +49,20 @@
 
           </div>
         </div></div>
+         </section>
+         <section class="panel">
+    <div class="panel-body" >
         <div style="margin:43px; text-align:center;">
 
              <a href="#" class="btn btn-theme" onclick="printDiv('printableArea')">Print Now</a>
               <a class="btn btn-theme" href="{{route('admin.members.list'); }}"> Return Back</a>
-
+<section>
             </div>
 
 
 
-              </section>
+
+</div>
 
 
 

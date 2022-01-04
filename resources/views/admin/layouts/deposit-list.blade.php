@@ -15,21 +15,18 @@
                       </div>
                     </form>
 
-    <!-- Button trigger modal -->
-  <h1 class="modal-title text-warning"  style="color:black;text-align:center;">Deposit List</h1>
-<div class=" text-start">
-<a href="" class="btn btn-info " data-bs-toggle="modal" data-bs-target="#exampleModal">
-    Add New Deposit
-</a>
-</div>
-   </header>
-            </section>
-</div>
-<br>
+    <h1  style="text-align:center;"><i class="fa fa-angle-right"> Deposit List</i></h1>
 
-<table class="table table-striped table-bordered border-primary bg-light table-cell-padding-.2rem" style="margin-top:10px;">
-    <thead class= "table-dark">
-      <tr>
+<a href="" class="btn btn-info " > Add New Deposit</a>
+ </header>
+            </section>
+
+
+<div class="content-panel">
+              <table class="table">
+                <thead>
+                  <tr>
+        <th scope="col">#</th>
         <th scope="col"> Member  ID</th>
         <th scope="col"> Member Name  </th>
         <th scope="col"> Account No</th>
@@ -38,14 +35,16 @@
         <th scope="col">Amount</th>
         <th scope="col">Date</th>
             <th scope="col">Transaction</th>
+           <th>Action</th>
+
       </tr>
     </thead>
     <tbody>
 @foreach($deposits as $key=>$deposit)
 {{-- @dd($data->loanMember->Memberuser); --}}
         <tr>
-              <th scope="row">
-          {{$deposit->member_id}}</th>
+         <td>{{$key+1}}</td>
+          <td>{{$deposit->member_id}}</td>
            <td>{{$deposit->member_name}}</td>
            <td>{{$deposit->account_no}}</td>
            <td>{{$deposit->branch}}</td>
@@ -53,11 +52,17 @@
            <td>{{$deposit->amount}}</td>
            <td>{{$deposit->date}}</td>
            <td>{{$deposit->transaction}}</td>
-            <td><a class="btn btn-primary" href="" role="button">edit</a>
-             <a onclick="return confirm('Are You Sure?')" class="btn btn-danger" href="" role="button">delete</a></td>
 
+
+
+
+            <td><a button class="btn btn-success btn-xs" href=""><i class=" fa fa-check"></i></button></a>
+                 <a button class="btn btn-primary btn-xs" href=""><i class="fa fa-pencil"></i></button></a>
+                <a onclick="return confirm('Are You Sure?')" button class="btn btn-danger btn-xs"   href=""><i class="fa fa-trash-o"></i></button></a>
+            </td>
 
         </tr>
         @endforeach
 </table>
+</div>
     @endsection

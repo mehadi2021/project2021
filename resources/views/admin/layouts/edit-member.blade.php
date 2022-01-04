@@ -1,8 +1,10 @@
 @extends ('admin.master')
 @section('content')
-
-     <h1 class="modal-title text-warning"  style="color:black;text-align:center;">Update Member Information</h1>
-   <section class="panel">
+<div class="col-sm-12">
+            <section class="panel">
+  <h1  style="text-align:center;"><i class="fa fa-angle-right">Update Member Information</i></h1>
+            </section>
+     <section class="content-panel">
 
                 <div class="panel-body">
                     @if($errors->any())

@@ -1,6 +1,10 @@
 @extends('admin.master')
 @section('content')
- <h1 class="modal-title text-warning"  style="color:black;text-align:center;">Add News</h1>
+
+<div class="col-sm-12">
+ <section class="panel">
+    <h1  style="text-align:center;"><i class="fa fa-angle-right"> Add News</i></h1>
+ </section>
 
  <section class="panel">
 

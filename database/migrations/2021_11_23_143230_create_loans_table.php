@@ -19,7 +19,7 @@ class CreateLoansTable extends Migration
             $table->string('member_name');
             $table->integer('ac_no');
             $table->string('type');
-            $table->double('loan_amount');
+            $table->integer('loan_amount');
             $table->integer('rate');
              $table->integer('time');
              $table->integer('interest');

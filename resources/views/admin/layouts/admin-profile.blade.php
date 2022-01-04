@@ -1,15 +1,16 @@
 @extends('admin.master')
 @section('content')
-
-<h1 style="text-align: center; color:black;">Administrator Information</h1>
+ <section class="panel">
+    <h1  style="text-align:center;"><i class="fa fa-angle-right"> Administrator Information</i></h1>
+ </section>
 
 @if(session('success'))
     <div class="alert alert-success">
         {!!  session ('success')  !!}
     </div>
 @endif
-
-           <div class="row content-panel" style="margin-left:10px;">
+ <section class="panel">
+        <div class="panel-body">
               <div class="col-md-4 profile-text mt mb centered">
                 <div class="right-divider hidden-sm hidden-xs">
                   <h4>mehadihasan.1720@gmail.com</h4>
@@ -33,17 +34,12 @@
               <div class="col-md-4 centered">
                 <div class="profile-pic">
                   <p><img src="{{url('/uploads/'.auth()->user()->image)}}"class="img-circle"></p>
-                  <p>
+                  <br>
                     <button class="btn btn-theme"><i class="fa fa-check"></i> Follow</button>
                       <a href="{{route ('admin.registration') }}" class="btn btn-theme02" >Registration</a>
                     <a href="{{route ('admin.edit') }}" class="btn btn-theme02" >Profile Edit </a>
                   </p>
                 </div>
-              </div>
-              <!-- /col-md-4 -->
-            </div>
-            <!-- /row -->
-          </div>
-          <!-- /col-lg-12 -->
-             <!-- /MAIN CONTENT -->
+        </section>
+    </div>
 @endsection

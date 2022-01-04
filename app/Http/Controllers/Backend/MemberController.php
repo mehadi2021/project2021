@@ -57,7 +57,7 @@ class MemberController extends Controller
               public function member_list()
     {
 
-         $list=Member::orderBy('id','desc')->paginate(1);
+         $list=Member::orderBy('id','desc')->paginate(2);
         return view('admin.layouts.member-list', compact('list'));
      }
              public function member_details($id)
@@ -104,7 +104,7 @@ class MemberController extends Controller
                     }
         $list->update([
              'name'=>$request->name,
-             'user_id'=>$request->user_id,
+             'member_id'=>$request->member_id,
             'dob'=>$request->dob,
             'address'=>$request->address,
             'gender'=>$request->gender,
@@ -137,7 +137,7 @@ class MemberController extends Controller
     {
 
            $key = request()->search;
-        $list= Member::where('user_id','LIKE',"%{$key}%")->get();
+        $list= Member::where('member_id','LIKE',"%{$key}%")->get();
         // dd($list);
         return view('admin.layouts.member-search', compact('list'));
      }

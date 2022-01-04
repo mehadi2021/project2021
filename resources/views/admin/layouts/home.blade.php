@@ -1,8 +1,10 @@
 @extends('admin.master')
 @section('content')
 
-
-<h1 style="text-align: center; color:black;">Wellcome to our admin panel</h1>
+<div class="col-sm-12">
+            <section class="panel">
+  <h1  style="text-align:center;"><i class="fa fa-angle-right">Wellcome to our admin panel</i></h1>
+            </section>
 @if(session('success'))
     <div class="alert alert-success" style="text-align:center;">
       <h4>  {!!  session ('success')  !!}
@@ -11,8 +13,8 @@
     </div>
 @endif
 
-
-<div class="row content-panel" style="margin-left:10px;">
+ <section class="panel">
+<div class="panel-body" style="margin-left:10px;">
 
                           <div class="row mt" >
           <div class="col-lg-14">
@@ -53,5 +55,6 @@
 
 
                           </div></div>
+
 
 					@endsection

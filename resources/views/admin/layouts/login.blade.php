@@ -1,7 +1,4 @@
 
-
-
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -31,13 +28,15 @@
 
 </head>
 <body>
-  <div id="login-page">
-    <div class="container">
-      <form class="form-login" action="{{ route('admin.log') }}" Method="post">
-        @csrf
-        <h2 class="form-login-heading">sign in now</h2>
 
-        @if(session('success'))
+    <div class="col-md-5"  style="margin-left:400px; margin-top:100px;">
+ <section class="panel">
+    <h1  style="text-align:center;"><i class="fa fa-angle-right"> sign in now</i></h1>
+ </section>
+    </div>
+ <div class="col-md-5"  style="margin-left:400px;">
+
+ @if(session('success'))
     <div class="alert alert-success" style="text-align:center;">
         {!!  session ('success')  !!}
     </div>
@@ -47,10 +46,13 @@
            { !!  session('error')  !! }
     </div>
 @endif
+ </div>
 
 
-
-
+<div class="col-md-5"  style="margin-left:400px;">
+ <section class="panel" >
+      <form class="form-login"  style="margin-top:0px;" action="{{ route('admin.log') }}" Method="post">
+        @csrf
         <div class="login-wrap">
           <input type="text" name="email" class="form-control" placeholder="User ID" autofocus>
           <br>
@@ -79,6 +81,7 @@
       </form>
     </div>
   </div>
+  <div>
 
 </body>
 

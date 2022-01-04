@@ -12,13 +12,11 @@
                       </div>
                     </form>
 
-    <!-- Button trigger modal -->
-    <h1 class="modal-title text-warning"  style="color:black;text-align:center;"> Branch  Details</h1>
-<div class=" text-start">
+    <h1  style="text-align:center;"><i class="fa fa-angle-right"> Branch  Details</i></h1>
 <a href="{{route('admin.branch.add') }}" class="btn btn-info " data-bs-toggle="modal" data-bs-target="#exampleModal">
   Add Branch
 </a>
-</div>
+
    </header>
             </section>
 @if(session('success'))
@@ -32,14 +30,13 @@
            { !! session('error') !! }
     </div>
 @endif
-<div class=container >
-<table class="table table-striped table-bordered border-primary bg-light table-cell-padding-.2rem"style="margin-top:20px;" >
-
-    <thead class= "table-dark">
-      <tr>
+ <div class="content-panel">
+              <table class="table">
+                <thead>
+                  <tr>
           <th scope="col">#</th>
         <th scope="col">Branch Name</th>
-        <th style="text-align:center;" scope="col">Action</th>
+        <th scope="col">Action</th>
       </tr>
     </thead>
 <tbody>
@@ -48,9 +45,9 @@
     <td>{{ $key+1 }}</td>
     <td>{{ $branch->name }}</td>
 
-    <td style="text-align:center;"> <a class="btn btn-info" href="" role="button">details</a>
-        <a class="btn btn-primary" href="" role="button">edit</a>
-        <a onclick="return confirm('Are You Sure?')" class="btn btn-danger" href="" role="button">delete</a></td>
+    <td> <a button class="btn btn-success btn-xs" href=""><i class=" fa fa-check"></i></button></a>
+        <a button class="btn btn-primary btn-xs" href=""><i class="fa fa-pencil"></i></button></a>
+        <a onclick="return confirm('Are You Sure?')" button class="btn btn-danger btn-xs"  href=""><i class="fa fa-trash-o"></i></button></a></td>
 
     </tr>
 @endforeach

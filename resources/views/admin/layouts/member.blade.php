@@ -1,10 +1,12 @@
 @extends ('admin.master')
 @section('content')
 
-     <h1 class="modal-title text-warning"  style="color:black;text-align:center;">Add New Member</h1>
-   <section class="panel">
+<div class="col-sm-12">
+ <section class="panel">
+    <h1  style="text-align:center;"><i class="fa fa-angle-right"> Add New Member</i></h1>
+ </section>
 
-                <div class="panel-body">
+
                     @if($errors->any())
     <div class="alert alert-danger">
         <ul>
@@ -15,7 +17,6 @@
     </div>
     @endif
 
-<div style="margin-top: 10px;">
 
 @if(session('success'))
     <div class="alert alert-success">
@@ -30,7 +31,9 @@
 @endif
 
 
+ <section class="panel">
 
+                <div class="panel-body">
 
 <form action="{{route('admin.members.store')}}" class="form-horizontal form-label-left"  method="post" enctype="multipart/form-data">
  @csrf
@@ -144,5 +147,6 @@
      </div>
 
 </form>
+                </div>
 
 @endsection

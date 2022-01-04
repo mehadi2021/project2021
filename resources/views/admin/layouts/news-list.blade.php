@@ -12,24 +12,19 @@
                       </div>
                     </form>
 
-    <!-- Button trigger modal -->
-    <h1 class="modal-title text-warning"  style="color:black;text-align:center;">  News Details</h1>
-<div class=" text-start">
-<a href="{{route ('admin.news.add') }}" class="btn btn-info " data-bs-toggle="modal" data-bs-target="#exampleModal">
-   Add News
-</a>
-</div>
-   </header>
+    <h1  style="text-align:center;"><i class="fa fa-angle-right">News Details</i></h1>
+<a href="{{route ('admin.news.add') }}" class="btn btn-info "> Add News</a>
+
+</header>
             </section>
 
- <div class=container>
-<table class="table table-striped table-bordered border-primary bg-light table-cell-padding-.2rem" style="margin-top:10px;">
-
-    <thead class= "table-dark">
-      <tr>
-           <th scope="col">#</th>
-        <th scope="col">News</th>
-         <th scope="col">Action</th>
+      <div class="content-panel">
+              <table class="table">
+                <thead>
+                  <tr>
+           <th>#</th>
+        <th>News</th>
+         <th>Action</th>
       </tr>
     </thead>
 <tbody>
@@ -37,12 +32,17 @@
     <tr>
     <td>{{ $key+1 }}</td>
     <td>{{ $news->news_description }}</td>
-    <td><a class="btn btn-info" href="" role="button">edit</a>
-    <a onclick="return confirm('Are You Sure?')" class="btn btn-danger" href="{{ route('admin.news.delete',$news->id) }}" role="button">delete</a></td>
-    </tr>
+
+    <td>
+        <a button class="btn btn-success btn-xs" href=""><i class=" fa fa-check"></i></button></a>
+        <a button class="btn btn-primary btn-xs" href=""><i class="fa fa-pencil"></i></a>
+       <a button onclick="return confirm('Are You Sure?')" class="btn btn-danger btn-xs" href="{{ route('admin.news.delete',$news->id) }}" ><i class="fa fa-trash-o"></i></button></a>
+    </td>
+</tr>
      @endforeach
 
 </tbody>
   </table>
-</div>
+            </div>
+            </div>
 @endsection

@@ -1,62 +1,59 @@
 @extends('admin.master')
 @section('content')
 
-
-
-
 <div class="col-sm-12">
             <section class="panel">
-              <header class="panel-heading wht-bg">
-                    <form action="#" class="pull-right mail-src-position">
+                      <header class="panel-heading wht-bg">
+                    <form action="{{ route('admin.members.search') }}" class="pull-right mail-src-position" Method="GET">
                       <div class="input-append">
-                        <input type="text" class="form-control " placeholder="Search Member">
+                        <input type="number"  name="search" class="form-control " placeholder="Search Member">
                         <br>
-                       <button a href="" class="btn btn-info "> serach</button></a>
+                       <button type="submit" class="btn btn-info">Submit</button>
                       </div>
                     </form>
-
-    <!-- Button trigger modal -->
-  <h1 class="modal-title text-warning"  style="color:black;text-align:center;"> Add New Loan</h1>
-<div class=" text-start">
-<a href="{{ route('admin.loan.add') }}" class="btn btn-info " data-bs-toggle="modal" data-bs-target="#exampleModal">
-    Add New Loan
-</a>
-</div>
-   </header>
+  <h1  style="text-align:center;"><i class="fa fa-angle-right"> Loan Status</i></h1>
+<a href="{{ route('admin.loan.add') }}" class="btn btn-info ">Add New Loan</a>
+</header>
             </section>
-</div>
-<br>
 
-<table class="table table-striped table-bordered border-primary bg-light table-cell-padding-.2rem" style="margin-top:10px;">
-    <thead class= "table-dark">
-      <tr>
+  <div class="content-panel">
+              <table class="table">
+                <thead>
+                  <tr>
+        <th scope="col">#</th>
         <th scope="col"> Member  ID</th>
         <th scope="col"> Member Name  </th>
         <th scope="col"> Account No</th>
+        <th scope="col"> Type</th>
         <th scope="col">Loan Amount</th>
         <th scope="col">Rate</th>
         <th scope="col">Time</th>
         <th scope="col">Interest</th>
-            <th scope="col">EMI</th>
-             <th scope="col">Payment Date</th>
+         <th scope="col">EMI</th>
+        <th scope="col">Payment Date</th>
+        <th scope="col">Actionn</th>
       </tr>
     </thead>
     <tbody>
 @foreach($lists as $key=>$list)
-{{-- @dd($data->loanMember->Memberuser); --}}
         <tr>
-              <th scope="row">
-          {{$list->member_id}}</th>
+              <td>{{$key+1}}</td>
+          <td>{{$list->member_id}}</td>
            <td>{{$list->member_name}}</td>
            <td>{{$list->ac_no}}</td>
+              <td>{{$list->type}}</td>
            <td>{{$list->loan_amount}}</td>
            <td>{{$list->rate}}</td>
            <td>{{$list->time}}</td>
            <td>{{$list->interest}}</td>
            <td>{{$list->emi}}</td>
            <td>{{$list->payment_date}}</td>
-            <td><a class="btn btn-primary" href="" role="button">edit</a>
-             <a onclick="return confirm('Are You Sure?')" class="btn btn-danger" href="{{ route('admin.loan.delete',$list->id) }}" role="button">delete</a></td>
+
+            <td><a button class="btn btn-success btn-xs" href=""><i class=" fa fa-check"></i></button></a>
+                <a button class="btn btn-primary btn-xs" href=""><i class="fa fa-pencil"></i></button></a>
+                <a onclick="return confirm('Are You Sure?')" button class="btn btn-danger btn-xs"   href="{{ route('admin.loan.delete',$list->id) }}"><i class="fa fa-trash-o"></i></button></a>
+            </td>
+
 
 
         </tr>
@@ -64,4 +61,5 @@
 
 
   </table>
+  </div>
     @endsection

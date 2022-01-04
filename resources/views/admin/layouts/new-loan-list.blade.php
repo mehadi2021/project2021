@@ -12,17 +12,13 @@
                       </div>
                     </form>
 
-    <!-- Button trigger modal -->
-  <h1 class="modal-title text-warning"  style="color:black;text-align:center;"> Add New Loan</h1>
-<div class=" text-start">
+                    <h1  style="text-align:center;"><i class="fa fa-angle-right">Add New Loan</i></h1>
+
 <a href="{{ route('admin.new.create') }}" class="btn btn-info " data-bs-toggle="modal" data-bs-target="#exampleModal">
     Add New Loan
 </a>
-</div>
    </header>
             </section>
-</div>
-<br>
 @if(session('success'))
     <div class="alert alert-success">
         {!!  session ('success')  !!}
@@ -36,11 +32,10 @@
 @endif
 
 
-<div class=container >
-<table class="table table-striped table-bordered border-primary bg-light table-cell-padding-.2rem"style="margin-top:20px;" >
-
-    <thead class= "table-dark">
-      <tr>
+ <div class="content-panel">
+              <table class="table">
+                <thead>
+                  <tr>
           <th scope="col">#</th>
         <th scope="col">Loan Name</th>
         <th scope="col">Amount</th>
@@ -48,7 +43,7 @@
         <th scope="col">Rate</th>
         <th scope="col">Interest</th>
         <th scope="col">EMI</th>
-        <th style="text-align:center;" scope="col">Action</th>
+        <th  scope="col">Action</th>
       </tr>
     </thead>
 <tbody>

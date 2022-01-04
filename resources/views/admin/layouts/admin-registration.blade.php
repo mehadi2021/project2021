@@ -1,26 +1,16 @@
 @extends ('admin.master')
 @section('content')
+<section class="panel">
+    <h1  style="text-align:center;"><i class="fa fa-angle-right">Admin Registration</i></h1>
+ </section>
 
-     <h1 class="modal-title text-warning"  style="color:black;text-align:center;">Admin Registration</h1>
    <section class="panel">
-
                 <div class="panel-body">
 
 
 
  <form action="{{route('admin.store')}}" method="post" enctype="multipart/form-data">
                     @csrf
-
-
-
-
-
-
-
-
-
-
-
 
  <div class="form-group row">
 
@@ -54,15 +44,19 @@
                 </div>
     </div>
 
-     <div class="form-group row">
+
+<div class="form-group row">
 
          <label class="control-label col-md-3 col-sm-3 col-xs-3">Enter Your Role</label>
                  <div class="col-md-9 col-sm-9 col-xs-9">
-                    <input type="text"  name="role"  class="form-control" required placeholder=" Enter Your Phone Number" data-inputmask="'mask': '99/99/9999'">
-                </div>
+                   <select class="form-control" name="role" id=""   aria-label="Default select example" required>
+                        <option value="Null" >select from here</option>
+                        <option value="admin">admin</option>
+                        <option value="user">user</option>
+                      </select>
+                       </div>
     </div>
-    <div class="form-group row">
-
+<div class="form-group row">
          <label class="control-label col-md-3 col-sm-3 col-xs-3">Upload Image</label>
                  <div class="col-md-9 col-sm-9 col-xs-9">
                     <input type="file" name="image"  class="form-control"  required data-inputmask="'mask': '99/99/9999'">

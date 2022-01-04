@@ -11,14 +11,11 @@
                        <button type="submit" class="btn btn-info">Submit</button>
                       </div>
                     </form>
-
-    <!-- Button trigger modal -->
-    <h1 class="modal-title text-warning"  style="color:black;text-align:center;"> Member  Lists</h1>
-<div class=" text-start">
+    <h1  style="text-align:center;"><i class="fa fa-angle-right"> Member  Lists</i></h1>
 <a href="{{route ('admin.members.add') }}" class="btn btn-info " data-bs-toggle="modal" data-bs-target="#exampleModal">
     Add member
 </a>
-</div>
+
    </header>
             </section>
 @if(session('success'))
@@ -32,21 +29,19 @@
            { !! session('error') !! }
     </div>
 @endif
-</div>
 
 
 
-<div class=container >
-<table class="table table-striped table-bordered border-primary bg-light table-cell-padding-.2rem"style="margin-top:20px;" >
-
-    <thead class= "table-dark">
-      <tr>
+   <div class="content-panel">
+              <table class="table">
+                <thead>
+                  <tr>
           <th scope="col">#</th>
         <th scope="col">Member ID</th>
         <th scope="col">Account no</th>
          <th scope="col">phn_no</th>
         <th scope="col">Branch Name</th>
-        <th style="text-align:center;" scope="col">Action</th>
+        <th scope="col">Action</th>
       </tr>
     </thead>
 <tbody>
@@ -59,9 +54,9 @@
     <td>{{ $news->phon_no}}</td>
     <td>{{ $news->branch}}</td>
 
-    <td style="text-align:center;"> <a class="btn btn-info" href="{{route('admin.members.details',$news->member_id)}}" role="button">details</a>
-        <a class="btn btn-primary" href="{{ route('admin.members.edit',$news->id) }}" role="button">edit</a>
-        <a onclick="return confirm('Are You Sure?')" class="btn btn-danger" href="{{ route('admin.members.delete',$news->id)}}" role="button">delete</a></td>
+    <td><a button class="btn btn-success btn-xs" href="{{route('admin.members.details',$news->member_id)}}"><i class=" fa fa-check"></i></a></button>
+        <a button class="btn btn-primary btn-xs" href="{{ route('admin.members.edit',$news->id) }}"><i class="fa fa-pencil"></i></a></button>
+        <a onclick="return confirm('Are You Sure?')"button  class="btn btn-danger btn-xs" href="{{ route('admin.members.delete',$news->id)}}"><i class="fa fa-trash-o"></i></button></a></td>
 
     </tr>
 
@@ -70,6 +65,7 @@
 </tbody>
   </table>
   {{$list ->links()}}
+</div>
 </div>
 
 @endsection

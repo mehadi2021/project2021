@@ -3,20 +3,13 @@
 
 <div class="col-sm-12">
             <section class="panel">
-              <header class="panel-heading wht-bg">
-    <!-- Button trigger modal -->
-    <h1 class="modal-title text-warning"  style="color:black;text-align:center;"> Member  Search List</h1>
-<div class=" text-start">
-</div>
-   </header>
+    <h1  style="text-align:center;"><i class="fa fa-angle-right">Member  Search List</i></h1>
             </section>
-</div>
-<br>
-<div class=container >
-<table class="table table-striped table-bordered border-primary bg-light table-cell-padding-.2rem"style="margin-top:20px;" >
 
-    <thead class= "table-dark">
-      <tr>
+<div class="content-panel">
+              <table class="table">
+                <thead>
+                  <tr>
           <th scope="col">#</th>
         <th scope="col">Member ID</th>
         <th scope="col">Account no</th>

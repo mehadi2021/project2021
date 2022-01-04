@@ -1,18 +1,13 @@
 @extends ('admin.master')
 @section('content')
 
-     <h1 class="modal-title text-warning"  style="color:black;text-align:center;">Request Loan</h1>
-   <section class="panel">
+<div class="col-sm-12">
+ <section class="panel">
+    <h1  style="text-align:center;"><i class="fa fa-angle-right"> Request Loan</i></h1>
+ </section>
 
-                <div class="panel-body">
 
-
-
-<form action="{{ route('admin.loan.store') }}" class="form-horizontal form-label-left"  method="post">
- @csrf
-
-   <div class="panel-body">
-                    @if($errors->any())
+  @if($errors->any())
     <div class="alert alert-danger">
         <ul>
             @foreach($errors->all() as $error)
@@ -21,8 +16,6 @@
         </ul>
     </div>
     @endif
-
-<div style="margin-top: 10px;">
 
 @if(session('success'))
     <div class="alert alert-success">
@@ -37,8 +30,13 @@
 @endif
 
 
+   <section class="panel">
+    <div class="panel-body">
 
-     @csrf
+
+
+<form action="{{ route('admin.loan.store') }}" class="form-horizontal form-label-left"  method="post">
+ @csrf
 <div class="form-group row">
          <label class="control-label col-md-3 col-sm-3 col-xs-3">Member ID</label>
                  <div class="col-md-9 col-sm-9 col-xs-9">
@@ -48,7 +46,7 @@
      <div class="form-group row">
          <label class="control-label col-md-3 col-sm-3 col-xs-3">Enter Member Name</label>
                  <div class="col-md-9 col-sm-9 col-xs-9">
-                     <input type="text" name="member_name" class="form-control" placeholder=" Enter your Name" data-inputmask="'mask' : '(999) 999-9999'">
+                     <input type="text" name="member_name" class="form-control" required placeholder=" Enter your Name" data-inputmask="'mask' : '(999) 999-9999'">
               </div>
     </div>
     <div class="form-group row">
@@ -66,7 +64,7 @@
 
                         <option value="Null" >select from here</option>
                         @foreach($list as $lists)
-                       <option value="{{ $lists->amount }}">{{ $lists->name }}</option>
+                       <option value="{{ $lists->name }}">{{ $lists->name }}</option>
  @endforeach
                       </select>
 
@@ -96,7 +94,7 @@
 
                         <option value="Null" >select from here</option>
                         @foreach($list as $lists)
-                       <option value="{{ $lists->interest }}" >{{ $lists->rate }}</option>
+                       <option value="{{ $lists->rate }}" >{{ $lists->rate }}</option>
  @endforeach
                       </select>
                        </div>
@@ -110,7 +108,7 @@
 
                         <option value="Null" >select from here</option>
                         @foreach($list as $lists)
-                       <option value="{{ $lists->interest }}" >{{ $lists->time }}</option>
+                       <option value="{{ $lists->time }}" >{{ $lists->time }}</option>
  @endforeach
                       </select>
                        </div>
@@ -139,7 +137,7 @@
 
                         <option value="Null" >select from here</option>
                         @foreach($list as $lists)
-                       <option value="{{ $lists->interest }}" >{{ $lists->emi}}</option>
+                       <option value="{{ $lists->emi }}" >{{ $lists->emi}}</option>
  @endforeach
                       </select>
                        </div>
