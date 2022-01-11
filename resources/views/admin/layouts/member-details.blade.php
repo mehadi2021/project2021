@@ -1,68 +1,90 @@
 @extends('admin.master')
 @section('content')
-
+<div  id="printableArea">
 <div class="col-sm-12">
             <section class="panel">
   <h1  style="text-align:center;"><i class="fa fa-angle-right">Information Details</i></h1>
             </section>
 
+
+
 <section class="panel">
-    <div class="panel-body" >
-
-        <div class="row">
-
-          <div class="col-lg-12"  id="printableArea">
-
-              <div class="custom-box" >
-
-                <div class="servicetitle">
-                  <h4>Member Information</h4>
-                  <hr>
+      <div class="panel-body" >
+     <div class="col-lg-10 col-lg-offset-1">
+           <div class="invoice-body">
+                <div class="pull-left">
+                        @foreach ($users as  $list )
+                  <h1>{{$list->name}}</h1>
+                   <address>
+                <strong>{{$list->email}}</strong><br>
+                   Bangladesh,2011<br>
+                <abbr title="Phone">Phone</abbr> {{$list->mobile}}
+              </address>
+                  @endforeach
                 </div>
-                <br>
+                  <!-- /pull-left -->
+                <div class="pull-right">
+             <div class="icn-main-container" style="text-align:right;" >
+               @foreach ($members as  $lists )
 
-                <div class="icn-main-container" >
-@foreach ($list as  $lists )
 
-
-                   <img src="{{url('/uploads/'.$lists->image)}}" class="img-square" width="150" height="120" alt="member image">
+                   <img src="{{url('/uploads/'.$lists->image)}}" class="img-circle" width="150" height="120" alt="member image">
+             </div>
                 </div>
-                <br>
-                <br>
-                <ul class="pricing" style="font-size:20px;">
-                  <li style="font-size:20px;">Member Name:&emsp;&emsp;{{$lists->name}}</li>
-                  <li style="font-size:20px;">Member ID:&emsp;&emsp;{{$lists->member_id}}</li>
-                 <li style="font-size:20px;">NID Number:&emsp;&emsp;{{$lists->voter_id}}</li>
-                  <li style="font-size:20px;">Account Number:&emsp;&emsp;{{$lists->account_number}}</li>
+                <!-- /pull-right -->
+                  <div class="clearfix"></div>
+                <div class="row">
+                  <div class="col-md-9">
+                  <strong>Member ID:{{$lists->member_id}}</strong><br>
+                  NID Number:{{$lists->voter_id}}<br>
+                 <p>Account Number:{{$lists->account_no}}</p><br>
+                </address>
 
-                  <li style="font-size:20px;">Date of Birth:&emsp;&emsp;{{$lists->dob}}</li>
-                  <li style="font-size:20px;">Email Address:&emsp;&emsp;</li>
-                  <li style="font-size:20px;">Address:&emsp;&emsp;{{$lists->address}}</li>
-                </ul>
-              </div>
+                  </div>
+                  <!-- /col-md-9 -->
+                  <div class="col-md-3">
+                    <br>
+                    <div>
+                      <div class="pull-left"> Joining Date : </div>
+                      <div class="pull-right"> {{$lists->created_at}} </div>
+                      <div class="clearfix"></div>
+                    </div>
+                    <div>
+                      <!-- /col-md-3 -->
+                      <div class="pull-left"> Last Update date: </div>
+                      <div class="pull-right"> {{$lists->updated_at}} </div>
+                      <div class="clearfix"></div>
+                    </div>
+                    <!-- /row -->
+                    <br>
+                    <div class="well well-small green">
+                      <div class="pull-left"> Total Due : </div>
+                      <div class="pull-right"> 8,000 USD </div>
+                      <div class="clearfix"></div>
+                    </div>
+                  </div>
+                  </div> </div>
+
 @endforeach
-@foreach ($me as $mes )
-<li>Total Amount:{{$mes->amount}}</li>
-@endforeach
-
-
-
+           </div>
           </div>
-        </div></div>
-         </section>
-         <section class="panel">
+        </section>
+             <section class="panel">
     <div class="panel-body" >
         <div style="margin:43px; text-align:center;">
 
              <a href="#" class="btn btn-theme" onclick="printDiv('printableArea')">Print Now</a>
               <a class="btn btn-theme" href="{{route('admin.members.list'); }}"> Return Back</a>
-<section>
+
+
+                   </div>
             </div>
 
+        </div></section>
+    </div>
 
 
 
-</div>
 
 
 
@@ -78,9 +100,8 @@
     }
 </script>
 
+  @endsection
 
 
 
 
-              <!-- end custombox -->
-           @endsection

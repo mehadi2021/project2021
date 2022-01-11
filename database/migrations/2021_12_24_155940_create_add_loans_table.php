@@ -16,11 +16,12 @@ class CreateAddLoansTable extends Migration
         Schema::create('add_loans', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->integer('amount');
-             $table->integer('time');
-              $table->integer('rate');
-               $table->integer('interest');
-                $table->integer('emi');
+            // $table->integer('amount');
+            //  $table->integer('time');
+            //   $table->integer('rate');
+            //    $table->integer('interest');
+            //     $table->integer('emi');
+               $table->string('calculation_id');
             $table->timestamps();
         });
     }

@@ -5,7 +5,7 @@
  </section>
 
 @if(session('success'))
-    <div class="alert alert-success">
+    <div class="alert alert-success" style="text-align:center;">
         {!!  session ('success')  !!}
     </div>
 @endif
@@ -13,9 +13,9 @@
         <div class="panel-body">
               <div class="col-md-4 profile-text mt mb centered">
                 <div class="right-divider hidden-sm hidden-xs">
-                  <h4>mehadihasan.1720@gmail.com</h4>
+                  <h4>{{auth()->user()->email}}</h4>
                   <h5>Gmails</h5>
-                  <h4>01714-797978</h4>
+                  <h4>{{auth()->user()->mobile}}</h4>
                   <h5>Mobile</h5>
                   <h4>$ 13,980</h4>
                   <h5>MONTHLY EARNINGS</h5>
@@ -24,9 +24,9 @@
               <!-- /col-md-4 -->
 
               <div class="col-md-4 profile-text">
-                <h3>MehaDi HaSan</h3>
+                <h3>{{ucwords(auth()->user()->name)}}</h3>
                 <h5>Main Administrator</h5>
-                <p>I am Mehdi Hasan.My home district Sherpur.I was complete my Bsc IUBAT university.</p>
+                <p>I am {{ucwords(auth()->user()->name)}}.My home district Sherpur.I was complete my Bsc IUBAT university.</p>
                 <br>
                 <p><button class="btn btn-theme"><i class="fa fa-envelope"></i> Send Message</button></p>
               </div>

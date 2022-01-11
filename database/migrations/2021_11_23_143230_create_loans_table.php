@@ -25,6 +25,7 @@ class CreateLoansTable extends Migration
              $table->integer('interest');
             $table->integer('emi');
             $table->date('payment_date');
+             $table->string('status')->default('In Process');
 
 
 

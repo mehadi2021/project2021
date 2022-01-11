@@ -5,7 +5,7 @@
         <ul class="sidebar-menu" id="nav-accordion">
           <p class="centered"><img src="{{url('/uploads/'.auth()->user()->image)}}" class="img-circle" width="90" height="90"></a></p>
                 <h5 class="centered">{{ucwords(auth()->user()->name)}}</h5>
-          <h6 style=" text-align: center;" ><a href="{{ route('admin.profile') }}" style="color:rgb(218, 212, 212)"; >Administrator</a></h6>
+          <h6 style=" text-align: center; font-size:15px;" ><a href="{{ route('admin.profile') }}" style="color:rgb(218, 212, 212);" ><i class="fa fa-cog">Administrator</i></a></h6>
           <li class="mt">
             <a class="active" href="{{route('admin')}}">
               <i class="fa fa-dashboard"></i>

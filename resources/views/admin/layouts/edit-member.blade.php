@@ -20,13 +20,13 @@
 <div style="margin-top: 10px;">
 
 @if(session('success'))
-    <div class="alert alert-success">
+    <div class="alert alert-success" style="text-align:center;">
         {!!  session ('success')  !!}
     </div>
 @endif
 
  @if(session('error'))
-    <div class="alert alert-danger">
+    <div class="alert alert-danger" style="text-align:center;">
            { !! session('error') !! }
     </div>
 @endif
@@ -49,7 +49,7 @@
 
          <label class="control-label col-md-3 col-sm-3 col-xs-3">Member ID</label>
                  <div class="col-md-9 col-sm-9 col-xs-9">
-                    <input type="text"  name="user_id" class="form-control" required placeholder=" Enter Your member id"  value="{{ old('user_id',$lis->user_id )}}"data-inputmask="'mask': '99/99/9999'">
+                    <input type="text"  name="member_id" class="form-control" required placeholder=" Enter Your member id"  value="{{ old('member_id',$lis->member_id )}}"data-inputmask="'mask': '99/99/9999'">
                 </div>
     </div>
 
@@ -74,9 +74,9 @@
                  <div class="col-md-9 col-sm-9 col-xs-9">
                    <select class="form-control" name="gender" id=""   aria-label="Default select example" required>
                         <option value="Null" >select from here</option>
-                        <option value="Male">Male</option>
-                        <option value="Female">Female</option>
-                        <option value="Other">Other</option>
+                        <option value="Male" {{ $lis->gender=='Male' ? 'selected': ' ' }}>Male</option>
+                        <option value="Female" {{ $lis->gender=='Female' ? 'selected': ' ' }}>Female</option>
+                        <option value="Other" {{ $lis->gender=='Other' ? 'selected': ' ' }}>Other</option>
                       </select>
                        </div>
     </div>

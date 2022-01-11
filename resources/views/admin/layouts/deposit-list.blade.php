@@ -56,7 +56,7 @@
 
 
 
-            <td><a button class="btn btn-success btn-xs" href=""><i class=" fa fa-check"></i></button></a>
+            <td><a button class="btn btn-success btn-xs" href="{{ route('admin.deposit.details',$deposit->member_id) }}"><i class=" fa fa-check"></i></button></a>
                  <a button class="btn btn-primary btn-xs" href=""><i class="fa fa-pencil"></i></button></a>
                 <a onclick="return confirm('Are You Sure?')" button class="btn btn-danger btn-xs"   href=""><i class="fa fa-trash-o"></i></button></a>
             </td>

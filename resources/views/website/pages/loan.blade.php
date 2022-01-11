@@ -45,12 +45,16 @@
          <label class="control-label col-md-3 col-sm-3 col-xs-3">Loan Amount</label>
                  <div class="col-md-9 col-sm-9 col-xs-9">
 
+                      <div class="col-md-9 col-sm-9 col-xs-9">
+                     <input type="text" name="member_id"  class="form-control"  required value="{{ $lists->calculation->amount }}" placeholder=" Enter your Member ID" data-inputmask="'mask' : '(999) 999-9999'">
+                </div>
+
                       <select class="form-control" name="loan_amount" id=""   aria-label="Default select example" required>
 
                         <option value="Null" >select from here</option>
-                        @foreach($list as $lists)
-                       <option value="{{ $lists->amount }}">{{ $lists->amount }}</option>
- @endforeach
+     @foreach($list as $lists)
+                       <option value="{{ $lists->amount }}">{{ $lists->calculation->amount }}</option>
+@endforeach
                       </select>
 
 </div>
@@ -63,7 +67,7 @@
 
                         <option value="Null" >select from here</option>
                         @foreach($list as $lists)
-                       <option value="{{ $lists->interest }}" >{{ $lists->rate }}</option>
+                       <option value="{{ $lists->interest }}" >{{ $lists->calculation->rate }}</option>
  @endforeach
                       </select>
                        </div>

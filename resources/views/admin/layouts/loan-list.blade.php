@@ -16,6 +16,20 @@
 </header>
             </section>
 
+            @if(session('success'))
+    <div class="alert alert-success" style="text-align:center;">
+        {!!  session ('success')  !!}
+    </div>
+@endif
+
+ @if(session('error'))
+    <div class="alert alert-danger" style="text-align:center;">
+           { !! session('error') !! }
+    </div>
+@endif
+
+
+
   <div class="content-panel">
               <table class="table">
                 <thead>
@@ -31,7 +45,8 @@
         <th scope="col">Interest</th>
          <th scope="col">EMI</th>
         <th scope="col">Payment Date</th>
-        <th scope="col">Actionn</th>
+         <th scope="col">Status</th>
+        <th scope="col">Action</th>
       </tr>
     </thead>
     <tbody>
@@ -48,11 +63,22 @@
            <td>{{$list->interest}}</td>
            <td>{{$list->emi}}</td>
            <td>{{$list->payment_date}}</td>
+         <td>{{$list->status}}</td>
+            <td>
 
-            <td><a button class="btn btn-success btn-xs" href=""><i class=" fa fa-check"></i></button></a>
-                <a button class="btn btn-primary btn-xs" href=""><i class="fa fa-pencil"></i></button></a>
+         <div class="btn-group">
+                <button type="button" class="btn btn-theme dropdown-toggle" data-toggle="dropdown">
+                  Check<span class="caret"></span>
+                  </button>
+                <ul class="dropdown-menu" style="min-width:95px;" role="menu">
+                  <li><a href="{{ route('admin.loan.approve',$list->id) }}">Approve</a></li>
+                   <li><a href="{{route('admin.loan.cancel',$list->id)}}">Cancel</a></li>
+                </ul>
+              </div>
+              <a button class="btn btn-success btn-xs" href="{{ route('admin.loan.details',$list->member_id) }}"><i class=" fa fa-check"></i></a></button>
                 <a onclick="return confirm('Are You Sure?')" button class="btn btn-danger btn-xs"   href="{{ route('admin.loan.delete',$list->id) }}"><i class="fa fa-trash-o"></i></button></a>
-            </td>
+
+        </td>
 
 
 

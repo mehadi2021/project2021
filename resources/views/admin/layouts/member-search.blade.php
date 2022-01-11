@@ -23,7 +23,7 @@
     <tr>
 
     <td>{{ $key+1 }}</td>
-    <td>{{ $news->user_id}}</td>
+    <td>{{ $news->member_id}}</td>
     <td>{{ $news->account_no}}</td>
     <td>{{ $news->phon_no}}</td>
     <td>{{ $news->branch}}</td>

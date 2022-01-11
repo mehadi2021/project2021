@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Backend;
 use App\Models\Add_loan;
+use App\Models\Calculation;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
@@ -12,7 +13,7 @@ class New_loanController extends Controller
          return view('admin.layouts.new-loan-list', compact('lists'));
      }
       public function loan_request(){
-         $list=Add_loan::all();
+         $list=Add_loan::with('calculation')->get();
          return view('website.pages.loan', compact('list'));
      }
 

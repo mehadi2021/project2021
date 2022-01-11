@@ -46,6 +46,7 @@ class UserController extends Controller
                         $file->storeAs('/uploads', $filename);
                     }
 
+
         User::create([
            'name'=>$request->username,
            'email'=>$request->email,

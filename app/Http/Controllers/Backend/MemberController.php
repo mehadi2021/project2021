@@ -3,9 +3,9 @@
 namespace App\Http\Controllers\Backend;
 use App\Http\Controllers\Controller;
 use App\Models\Branch;
-use App\Models\Deposit;
 use App\Helpers;
 use App\Models\Member;
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class MemberController extends Controller
@@ -62,9 +62,9 @@ class MemberController extends Controller
      }
              public function member_details($id)
              {
-                 $me=Deposit::where('member_id',$id)->get();
-                 $list=Member::where('member_id',$id)->get();
-                 return view('admin.layouts.member-details', compact('me','list'));
+                 $users=User::all();
+                 $members=Member::all();
+                 return view('admin.layouts.member-details', compact('members','users'));
              }
              public function member_delete($id)
              {
@@ -129,6 +129,10 @@ class MemberController extends Controller
  $md=$request->mh;
  $mr=$request->mhr;
 // dd($me);
+  $CI=null;
+    $Ci=null;
+    $CI=$p*(pow((1+$r/100),$t));
+    $Ci=$CI/$t;
              return  interest($me,$md,$mr);
              }
 

@@ -96,9 +96,18 @@ Route::get('/',[DashboardController ::class,'dashboard'])->name('admin');
     Route::get('/loan/loan request',[LoanController::class,'loan_add'])->name('admin.loan.add');
     Route::post('/loan/loan request',[LoanController::class,'loan_store'])->name('admin.loan.store');
     Route::get('/loan/loan status',[LoanController::class,'loan_list'])->name('admin.loan.list');
+   Route::get('/loan/loan status/action/approve/{id}',[LoanController::class,'loan_approve'])->name('admin.loan.approve');
+    Route::get('/loan/loan status/action/cancel/{id}',[LoanController::class,'loan_cancel'])->name('admin.loan.cancel');
+        Route::get('/loan/loan status/action/view/{id}',[LoanController::class,'loan_details'])->name('admin.loan.details');
     Route::get('/loan/loan status/delete/{id}',[LoanController::class,'loan_delete'])->name('admin.loan.delete');
 
+
+
+
+
+
     Route::get('/deposit/deposit status',[DepositController::class,'deposit_list'])->name('admin.deposit.list');
+    Route::get('/deposit/deposit status/view/{id}',[DepositController::class,'deposit_details'])->name('admin.deposit.details');
 
 
 

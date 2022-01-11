@@ -12,7 +12,7 @@
                       </div>
                     </form>
 
-                    <h1  style="text-align:center;"><i class="fa fa-angle-right">Add New Loan</i></h1>
+                    <h1  style="text-align:center;"><i class="fa fa-angle-right">New Loan Details</i></h1>
 
 <a href="{{ route('admin.new.create') }}" class="btn btn-info " data-bs-toggle="modal" data-bs-target="#exampleModal">
     Add New Loan
@@ -20,13 +20,13 @@
    </header>
             </section>
 @if(session('success'))
-    <div class="alert alert-success">
+    <div class="alert alert-success" style="text-align:center;">
         {!!  session ('success')  !!}
     </div>
 @endif
 
  @if(session('error'))
-    <div class="alert alert-danger">
+    <div class="alert alert-danger" style="text-align:center;">
            { !! session('error') !! }
     </div>
 @endif
@@ -56,9 +56,11 @@
        <td>{{ $news->rate }}</td>
         <td>{{ $news->interest }}</td>
          <td>{{ $news->emi }}</td>
-    <td style="text-align:center;"> <a class="btn btn-info" href="" role="button">details</a>
-        <a class="btn btn-primary" href="" role="button">edit</a>
-        <a onclick="return confirm('Are You Sure?')" class="btn btn-danger" href="" role="button">delete</a></td>
+        <td>
+           <a button class="btn btn-success btn-xs" href=""><i class=" fa fa-check"></i></button></a>
+        <a button class="btn btn-primary btn-xs" href=""><i class="fa fa-pencil"></i></a>
+       <a button onclick="return confirm('Are You Sure?')" class="btn btn-danger btn-xs" href="" ><i class="fa fa-trash-o"></i></button></a>
+     </td>
 
     </tr>
         @endforeach

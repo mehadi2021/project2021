@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers\Backend;
 use App\Models\Loan;
+use App\Models\Member;
+use App\Models\User;
 use App\Models\Add_loan;
 use App\Http\Controllers\Controller;
 use App\Models\user_request;
@@ -48,6 +50,32 @@ class LoanController extends Controller
          $lists=Loan::all();
          return view('admin.layouts.loan-list', compact('lists'));
      }
+
+
+  public function loan_approve($id)
+      {
+         $data=Loan::find($id);
+         $data->status='Approve';
+         $data->save();
+         return redirect()->back()->with('success','Loan approve successful');
+     }
+
+      public function loan_cancel($id)
+      {
+         $data=Loan::find($id);
+         $data->status='Reject';
+         $data->save();
+         return redirect()->back()->with('success','Loan Reject!!');;
+     }
+       public function loan_details($id){
+          $members=Member::all();
+          $users=User::all();
+            $loans=Loan::where('member_id',$id)->get();;
+       return   view('admin.layouts.loan-details',compact('users','members','loans'));
+    }
+
+
+
       public function loan_delete($id)
       {
          $list=Loan::find($id);
