@@ -11,12 +11,13 @@ class DepositController extends Controller
 {
     public function deposit_list(){
           $deposits=Deposit::all();
-       return   view('admin.layouts.deposit-list',compact('deposits'));
+       return   view('admin.layouts.Deposit.deposit-list',compact('deposits'));
     }
      public function deposit_details($id){
           $members=Member::all();
           $users=User::all();
-            $deposits=Deposit::where('member_id',$id)->get();;
-       return   view('admin.layouts.deposit-details',compact('users','members','deposits'));
+            $amount=Deposit::where('member_id',$id)->sum('amount');
+            $deposits=Deposit::where('member_id',$id)->get();
+       return   view('admin.layouts.Deposit.deposit-details',compact('users','members','deposits','amount'));
     }
 }

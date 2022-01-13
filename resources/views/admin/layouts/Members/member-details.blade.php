@@ -13,31 +13,31 @@
      <div class="col-lg-10 col-lg-offset-1">
            <div class="invoice-body">
                 <div class="pull-left">
-                        @foreach ($users as  $list )
-                  <h1>{{$list->name}}</h1>
+                        {{-- @foreach($user as  $list ) --}}
+                  <h1>{{$member->name}}</h1>
                    <address>
-                <strong>{{$list->email}}</strong><br>
+                {{-- <strong>{{$user->email}}</strong><br>
                    Bangladesh,2011<br>
-                <abbr title="Phone">Phone</abbr> {{$list->mobile}}
+                <abbr title="Phone">Phone</abbr> {{$user->mobile}} --}}
               </address>
-                  @endforeach
+                  {{-- @endforeach --}}
                 </div>
                   <!-- /pull-left -->
                 <div class="pull-right">
              <div class="icn-main-container" style="text-align:right;" >
-               @foreach ($members as  $lists )
+               {{-- @foreach ($member as  $lists ) --}}
 
 
-                   <img src="{{url('/uploads/'.$lists->image)}}" class="img-circle" width="150" height="120" alt="member image">
+                   <img src="{{url('/uploads/'.$member->image)}}" class="img-circle" width="150" height="120" alt="member image">
              </div>
                 </div>
                 <!-- /pull-right -->
                   <div class="clearfix"></div>
                 <div class="row">
                   <div class="col-md-9">
-                  <strong>Member ID:{{$lists->member_id}}</strong><br>
-                  NID Number:{{$lists->voter_id}}<br>
-                 <p>Account Number:{{$lists->account_no}}</p><br>
+                  <strong>Member ID:{{$member->member_id}}</strong><br>
+                  NID Number:{{$member->voter_id}}<br>
+                 <p>Account Number:{{$member->account_no}}</p><br>
                 </address>
 
                   </div>
@@ -46,13 +46,13 @@
                     <br>
                     <div>
                       <div class="pull-left"> Joining Date : </div>
-                      <div class="pull-right"> {{$lists->created_at}} </div>
+                      <div class="pull-right"> {{$member->created_at}} </div>
                       <div class="clearfix"></div>
                     </div>
                     <div>
                       <!-- /col-md-3 -->
                       <div class="pull-left"> Last Update date: </div>
-                      <div class="pull-right"> {{$lists->updated_at}} </div>
+                      <div class="pull-right"> {{$member->updated_at}} </div>
                       <div class="clearfix"></div>
                     </div>
                     <!-- /row -->
@@ -65,7 +65,7 @@
                   </div>
                   </div> </div>
 
-@endforeach
+{{-- @endforeach --}}
            </div>
           </div>
         </section>

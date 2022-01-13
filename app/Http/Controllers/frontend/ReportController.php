@@ -10,7 +10,7 @@ class ReportController extends Controller
     public function report()
     {
       $list=Deposit::all();
-        return view('website.pages.member-report',compact('list'));
+        return view('website.pages.Members.member-report',compact('list'));
     }
 
 }

@@ -13,7 +13,7 @@ class DashboardController extends Controller
            {
                $member=Member::count();
                   $loans=Loan::count();
-           return view('admin.layouts.home',compact('member','loans'));
+           return view('admin.layouts.DashBoard.home',compact('member','loans'));
 
 
            }

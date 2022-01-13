@@ -23,7 +23,6 @@
   <link href="{{ url('css/style.css') }}" rel="stylesheet">
 
   <link href="{{ url('css/style-responsive.css') }}" rel="stylesheet">
-  <script src="{{ url('lib/chart-master/Chart.js') }}"></script>
 
 </head>
 

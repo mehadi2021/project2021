@@ -9,7 +9,7 @@ class BranchController extends Controller
 {
     public function branch_list(){
          $branches=Branch::all();
-         return view('admin.layouts.branch-list', compact('branches'));
+         return view('admin.layouts.Branch.branch-list', compact('branches'));
      }
 
        public function branch_deposit(){
@@ -19,7 +19,7 @@ class BranchController extends Controller
 
      public function branch_create()
     {
-         return view ('admin.layouts.add-branch');
+         return view ('admin.layouts.Branch.add-branch');
     }
 
 

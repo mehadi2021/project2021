@@ -13,7 +13,7 @@ class MemberController extends Controller
  public function member_create()
     {
         $branches=Branch::all();
-         return view('admin.layouts.member', compact('branches'));
+         return view('admin.layouts.Members.member', compact('branches'));
 
     }
 
@@ -54,17 +54,54 @@ class MemberController extends Controller
 
     }
 
-              public function member_list()
-    {
 
-         $list=Member::orderBy('id','desc')->paginate(2);
-        return view('admin.layouts.member-list', compact('list'));
+
+
+//   public function member_search()
+//     {
+//         $key=null;
+//         if(request()->search){
+//            $key = request()->search;
+//         $list= Member::where('member_id','LIKE',"%{$key}%")->get();
+//         // dd($list);
+//         return view('admin.layouts.Members.member-list', compact('list','key'));
+//     }
+//         //  $list= Member::all();
+//         //        return view('admin.layouts.member-list', compact('list','key'));
+
+//      }
+
+
+
+
+
+
+
+
+
+
+public function member_list()
+    {
+         $key=null;
+        if(request()->search){
+           $key = request()->search;
+        $lists= Member::where('member_id','LIKE','%'.$key.'%')->get();
+        //  dd($list);
+        return view('admin.layouts.Members.member-list', compact('lists','key'));
+    }
+
+        $lists=Member::orderBy('id','desc')->paginate(1);
+        return view('admin.layouts.Members.member-list', compact('lists','key'));
      }
+
+
+
+
              public function member_details($id)
              {
-                 $users=User::all();
-                 $members=Member::all();
-                 return view('admin.layouts.member-details', compact('members','users'));
+                 $user=User::find($id);
+                 $member=Member::find($id);
+                 return view('admin.layouts.Members.member-details', compact('member','user'));
              }
              public function member_delete($id)
              {
@@ -80,7 +117,7 @@ class MemberController extends Controller
              {
                  //dd($id);
                  $lis=Member::find($id);
-                return  view('admin.layouts.edit-member',compact('lis'));
+                return  view('admin.layouts.Members.edit-member',compact('lis'));
              }
              public function member_update(Request $request,$id)
              {
@@ -137,13 +174,4 @@ class MemberController extends Controller
              }
 
 
-               public function member_search()
-    {
-
-           $key = request()->search;
-        $list= Member::where('member_id','LIKE',"%{$key}%")->get();
-        // dd($list);
-        return view('admin.layouts.member-search', compact('list'));
-     }
-
-    }
+                 }

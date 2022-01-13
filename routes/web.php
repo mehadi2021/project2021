@@ -5,6 +5,7 @@ use App\Http\Controllers\frontend\ServiceController;
  use App\Http\Controllers\frontend\DepositController as DController;
   use App\Http\Controllers\frontend\ReportController;
   use App\Http\Controllers\frontend\LoanRequestController;
+  use App\Http\Controllers\NotificationController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -29,6 +30,10 @@ Route::group(['prefix'=>'admin-portal'],function(){
  Route::get('/login',[UserController ::class,'page'])->name('admin.page');
   Route::post('/login',[UserController ::class,'log'])->name('admin.log');
 
+ Route::get('/lo',[NotificationController ::class,'sendNotification'])->name('admin.pa');
+
+
+
 Route::group(['middleware'=>['auth','admin']],function(){
 Route::get('/logout',[UserController ::class,'logout'])->name('admin.logout');
 Route::get('/',[DashboardController ::class,'dashboard'])->name('admin');
@@ -50,14 +55,14 @@ Route::get('/',[DashboardController ::class,'dashboard'])->name('admin');
 
 
      Route::get('/members/member',[MemberController::class,'member_create'])->name('admin.members.add');
-    Route::post('/members/member',[MemberController::class,'member_store'])->name('admin.members.store');
+     Route::post('/members/member',[MemberController::class,'member_store'])->name('admin.members.store');
     Route::get('/members/member-list',[MemberController::class,'member_list'])->name('admin.members.list');
-   Route::get('/members/member-list/details/{id}',[MemberController::class,'member_details'])->name('admin.members.details');
- Route::get('/members/member-list/delete/{id}',[MemberController::class,'member_delete'])->name('admin.members.delete');
-  Route::get('/members/member-list/edit/{id}',[MemberController::class,'member_edit'])->name('admin.members.edit');
-   Route::put('/members/member-list/update/{id}',[MemberController::class,'member_update'])->name('admin.members.update');
+    Route::get('/members/member-list/details/{id}',[MemberController::class,'member_details'])->name('admin.members.details');
+    Route::get('/members/member-list/delete/{id}',[MemberController::class,'member_delete'])->name('admin.members.delete');
+    Route::get('/members/member-list/edit/{id}',[MemberController::class,'member_edit'])->name('admin.members.edit');
+    Route::put('/members/member-list/update/{id}',[MemberController::class,'member_update'])->name('admin.members.update');
 
-       Route::get('/members/search',[MemberController::class,'member_search'])->name('admin.members.search');
+    //  Route::get('/members/member-list/search',[MemberController::class,'member_list'])->name('admin.members.search');
 
 
 

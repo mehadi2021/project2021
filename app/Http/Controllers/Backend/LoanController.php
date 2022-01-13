@@ -14,7 +14,7 @@ class LoanController extends Controller
     public function loan_add()
     {
         $list=Add_loan::all();
-        return view('admin.layouts.loan',compact('list'));
+        return view('admin.layouts.LoanRequest.loan',compact('list'));
     }
 
      public function loan_store(Request $request )
@@ -48,7 +48,7 @@ class LoanController extends Controller
     }
     public function loan_list(){
          $lists=Loan::all();
-         return view('admin.layouts.loan-list', compact('lists'));
+         return view('admin.layouts.LoanRequest.loan-list', compact('lists'));
      }
 
 
@@ -71,7 +71,7 @@ class LoanController extends Controller
           $members=Member::all();
           $users=User::all();
             $loans=Loan::where('member_id',$id)->get();;
-       return   view('admin.layouts.loan-details',compact('users','members','loans'));
+       return   view('admin.layouts.LoanRequest.loan-details',compact('users','members','loans'));
     }
 
 

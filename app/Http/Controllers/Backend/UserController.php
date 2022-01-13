@@ -11,19 +11,19 @@ class UserController extends Controller
 
     public function profile()
     {
-   return view('admin.layouts.admin-profile');
+   return view('admin.layouts.Profile.admin-profile');
 
     }
 
       public function page()
     {
-   return view('admin.layouts.login');
+   return view('admin.layouts.LogIn.login');
 
     }
 
      public function registration()
     {
-        return view('admin.layouts.admin-registration');
+        return view('admin.layouts.Profile.admin-registration');
     }
 
 
@@ -86,7 +86,7 @@ class UserController extends Controller
 
      public function edit()
     {
-   return view('admin.layouts.edit-profile');
+   return view('admin.layouts.Profile.edit-profile');
 
     }
 

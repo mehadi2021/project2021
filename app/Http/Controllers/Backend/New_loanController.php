@@ -10,7 +10,7 @@ class New_loanController extends Controller
 {
        public function loan_list(){
         $lists=Add_loan::all();
-         return view('admin.layouts.new-loan-list', compact('lists'));
+         return view('admin.layouts.AddLoan.new-loan-list', compact('lists'));
      }
       public function loan_request(){
          $list=Add_loan::with('calculation')->get();
@@ -21,7 +21,7 @@ class New_loanController extends Controller
 
       public function loan_create()
     {
-         return view ('admin.layouts.new-loan-add');
+         return view ('admin.layouts.AddLoan.new-loan-add');
     }
      public function loan_store(Request $request)
     {

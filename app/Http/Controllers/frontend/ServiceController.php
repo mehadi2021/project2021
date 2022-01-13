@@ -27,7 +27,7 @@ class ServiceController extends Controller
     public function profile()
     {
           $members=Member::all();
-         return view('website.pages.member-profile', compact('members'));
+         return view('website.pages.Members.member-profile', compact('members'));
 
     }
 

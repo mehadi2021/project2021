@@ -5,7 +5,9 @@
             <section class="panel">
     <h1  style="text-align:center;"><i class="fa fa-angle-right">Member  Search List</i></h1>
             </section>
-
+            @if($key)
+            <h4>You are searching for:{{ $key }}||found:{{ $list->count() }}</h4>
+     @endif
 <div class="content-panel">
               <table class="table">
                 <thead>

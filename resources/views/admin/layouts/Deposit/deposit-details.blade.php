@@ -54,7 +54,8 @@
                     <form action="" class="pull-right mail-src-position" Method="GET">
                       <div class="input-append">
                         <input type="number"  name="search" class="form-control " placeholder="Search Member">
-                            <br>
+                        <br>
+                              {{-- <button type="submit"><i class="fa fa-search"></i></button> --}}
                        <button type="submit" class="btn btn-info">Submit</button>
 
                       </div>
@@ -85,7 +86,7 @@
                       <td>{{$mes->member_id}}</td>
                       <td>Deposit</td>
                       <td class="text-right">${{$mes->amount}}</td>
-                      <td class="text-right">$429.00</td>
+                       <td class="text-right">{{$amount}}</td>
 
                     </tr>
                        @endforeach
@@ -99,7 +100,7 @@
 
                         <div class="well well-small green"><strong>Total</strong></div>
 
-                           <td class="text-right"><strong>$1029.00</strong></td>
+                           <td class="text-right"><strong>${{$amount}}</strong></td>
                       </td>
 
                     </tr>

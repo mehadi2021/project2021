@@ -9,7 +9,7 @@ use Illuminate\Http\Request;
 class NewsController extends Controller
 {
     public function news_create(){
-        return view('admin.layouts.news');
+        return view('admin.layouts.News.news');
     }
 
 
@@ -37,7 +37,7 @@ class NewsController extends Controller
 
      public function news_list(){
          $list=News::all();
-         return view('admin.layouts.news-list', compact('list'));
+         return view('admin.layouts.News.news-list', compact('list'));
      }
 
      public function news_delete($id){
@@ -45,5 +45,5 @@ class NewsController extends Controller
          $list->delete();
             return redirect()->back();
      }
-  
+
 }
