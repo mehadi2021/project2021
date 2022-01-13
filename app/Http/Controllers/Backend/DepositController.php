@@ -10,14 +10,14 @@ use Illuminate\Http\Request;
 class DepositController extends Controller
 {
     public function deposit_list(){
-          $deposits=Deposit::all();
+          $deposits=Deposit::paginate(2);
        return   view('admin.layouts.Deposit.deposit-list',compact('deposits'));
     }
      public function deposit_details($id){
-          $members=Member::all();
-          $users=User::all();
+          $members=Member::where('member_id',$id)->get();
+        //   $users=User::all();
             $amount=Deposit::where('member_id',$id)->sum('amount');
             $deposits=Deposit::where('member_id',$id)->get();
-       return   view('admin.layouts.Deposit.deposit-details',compact('users','members','deposits','amount'));
+       return   view('admin.layouts.Deposit.deposit-details',compact('members','deposits','amount'));
     }
 }

@@ -61,8 +61,7 @@ Route::get('/',[DashboardController ::class,'dashboard'])->name('admin');
     Route::get('/members/member-list/delete/{id}',[MemberController::class,'member_delete'])->name('admin.members.delete');
     Route::get('/members/member-list/edit/{id}',[MemberController::class,'member_edit'])->name('admin.members.edit');
     Route::put('/members/member-list/update/{id}',[MemberController::class,'member_update'])->name('admin.members.update');
-
-    //  Route::get('/members/member-list/search',[MemberController::class,'member_list'])->name('admin.members.search');
+    //   Route::get('/members/member-list/submit',[MemberController::class,'member_search'])->name('admin.members.search');
 
 
 

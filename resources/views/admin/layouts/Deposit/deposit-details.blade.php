@@ -10,16 +10,12 @@
             <div class="col-lg-10 col-lg-offset-1">
               <div class="invoice-body">
                 <div class="pull-left">
-                    @foreach ($users as  $list )
-                  <h1>{{$list->name}}</h1>
-              @endforeach
+                   @foreach($members as  $lists )
+                  <h1>{{$lists->name}}</h1>
                 </div>
                 <!-- /pull-left -->
                 <div class="pull-right">
              <div class="icn-main-container" style="text-align:right;" >
-               @foreach ($members as  $lists )
-
-
                    <img src="{{url('/uploads/'.$lists->image)}}" class="img-circle" width="150" height="120" alt="member image">
              </div>
                 </div>
@@ -31,7 +27,6 @@
                   NID Number:{{$lists->voter_id}}<br>
                  <p>Account Number:{{$lists->account_no}}</p><br>
                 </address>
-
                   </div>
                   <!-- /col-md-9 -->
                   <div class="col-md-3">
@@ -107,8 +102,7 @@
 
                     </tr>
                   </tbody>
-                </table>
-            </div>
+                </table></div>
 
 
   <section class="panel">
@@ -120,11 +114,4 @@
         </div> </div>
      </section>
     </div>
-
-
-
-                </div>
-              </div>
-
-    </section>
       @endsection

@@ -44,8 +44,8 @@
 {{-- @dd($data->loanMember->Memberuser); --}}
         <tr>
          <td>{{$key+1}}</td>
-          <td>{{$deposit->member_id}}</td>
-           <td>{{$deposit->member_name}}</td>
+          <td>{{$deposit->member_name}}</td>
+           <td>{{$deposit->member_id}}</td>
            <td>{{$deposit->account_no}}</td>
            <td>{{$deposit->branch}}</td>
            <td>{{$deposit->method}}</td>
@@ -64,5 +64,6 @@
         </tr>
         @endforeach
 </table>
+{{$deposits ->links()}}
 </div>
     @endsection

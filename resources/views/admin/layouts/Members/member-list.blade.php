@@ -4,11 +4,11 @@
 <div class="col-sm-12">
             <section class="panel">
               <header class="panel-heading wht-bg">
-                    <form action="{{ route('admin.members.list') }}" class="pull-right mail-src-position" Method="GET">
+                    <form action="{{route('admin.members.list')}}" class="pull-right mail-src-position" Method="GET">
                       <div class="input-append">
-                        <input value="{{$key}}" type="number"  name="search" class="form-control " placeholder="Search Member">
+                        <input value="{{ $key }}" type="number"  name="search" class="form-control " placeholder="Search Member id">
                         <br>
-                       <button type="submit" class="btn btn-info">Submit</button>
+                       <button type="submit" class="btn btn-info">Search</button>
                       </div>
                     </form>
 
@@ -30,6 +30,11 @@
            { !! session('error') !! }
     </div>
 @endif
+  @if($key)
+    <div class="alert alert-info" style="text-align:center;">
+            <h4>You are searching for:&nbsp {{ $key }}&nbsp &nbsp||&nbsp &nbspfound:&nbsp{{ $lists->count() }}</h4>
+    </div>
+     @endif
 
 
 
@@ -66,8 +71,9 @@
      @endforeach
 
 </tbody>
+
   </table>
-  {{$lists ->links()}}
+   {{$lists ->links()}}
 </div>
 </div>
 

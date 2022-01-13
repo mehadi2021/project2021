@@ -27,8 +27,9 @@
              <div class="icn-main-container" style="text-align:right;" >
                {{-- @foreach ($member as  $lists ) --}}
 
-
-                   <img src="{{url('/uploads/'.$member->image)}}" class="img-circle" width="150" height="120" alt="member image">
+               <div class="well well-small black">
+                   <img src="{{url('/uploads/'.$member->image)}}" class="img-square" width="155" height="125" alt="member image">
+             </div>
              </div>
                 </div>
                 <!-- /pull-right -->
@@ -68,6 +69,7 @@
 {{-- @endforeach --}}
            </div>
           </div>
+             </div>
         </section>
              <section class="panel">
     <div class="panel-body" >
@@ -77,7 +79,7 @@
               <a class="btn btn-theme" href="{{route('admin.members.list'); }}"> Return Back</a>
 
 
-                   </div>
+
             </div>
 
         </div></section>
