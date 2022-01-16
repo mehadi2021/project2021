@@ -54,32 +54,6 @@ class MemberController extends Controller
 
     }
 
-
-
-
-//   public function member_search()
-//     {
-//         $key=null;
-//         if(request()->search){
-//            $key = request()->search;
-//         $lists= Member::where('member_id','LIKE','%'.$key.'%')->get();
-//         // dd($list);
-//         return view('admin.layouts.Members.member-list', compact('lists','key'));
-//     }
-//           $lists= Member::orderBy('id','desc')->paginate(2);
-//               return view('admin.layouts.member-list', compact('lists','key'));
-
-//      }
-
-
-
-
-
-
-
-
-
-
 public function member_list()
     {
       $key=null;

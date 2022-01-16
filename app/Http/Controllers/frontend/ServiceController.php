@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\frontend;
 use App\Models\Branch;
 use App\Models\Member;
+use App\Models\User;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
@@ -24,12 +25,14 @@ class ServiceController extends Controller
     return view('website.pages.loan');
 
     }
-    public function profile()
+    public function profile($id)
     {
-          $members=Member::all();
+          $members=User::find($id);
          return view('website.pages.Members.member-profile', compact('members'));
 
     }
+
+    
 
 
 

@@ -7,9 +7,10 @@
 <div class="col-sm-12">
             <section class="panel">
               <header class="panel-heading wht-bg">
-                    <form action="#" class="pull-right mail-src-position">
+                    <form action="{{ route('admin.deposit.list') }}" class="pull-right mail-src-position">
                       <div class="input-append">
-                        <input type="text" class="form-control " placeholder="Search Member">
+                        <input value="{{ $key }}" type="number"  name="search" class="form-control " placeholder="Search Member id">
+
                         <br>
                        <button a href="" class="btn btn-info "> serach</button></a>
                       </div>
@@ -20,6 +21,24 @@
 <a href="" class="btn btn-info " > Add New Deposit</a>
  </header>
             </section>
+
+            @if(session('success'))
+    <div class="alert alert-success" style="text-align:center;">
+        {!!  session ('success')  !!}
+    </div>
+@endif
+
+ @if(session('error'))
+    <div class="alert alert-danger" style="text-align:center;">
+           { !! session('error') !! }
+    </div>
+@endif
+             @if($key)
+    <div class="alert alert-info" style="text-align:center;">
+            <h4>You are searching for:&nbsp {{ $key }}&nbsp &nbsp||&nbsp &nbspfound:&nbsp{{ $deposits ->count() }}</h4>
+    </div>
+     @endif
+
 
 
 <div class="content-panel">
@@ -44,8 +63,8 @@
 {{-- @dd($data->loanMember->Memberuser); --}}
         <tr>
          <td>{{$key+1}}</td>
-          <td>{{$deposit->member_name}}</td>
            <td>{{$deposit->member_id}}</td>
+          <td>{{$deposit->member_name}}</td>
            <td>{{$deposit->account_no}}</td>
            <td>{{$deposit->branch}}</td>
            <td>{{$deposit->method}}</td>

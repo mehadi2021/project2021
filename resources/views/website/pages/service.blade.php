@@ -17,7 +17,9 @@
                <li style="background: #a4c639;margin:10px;padding:15px;"><a href="{{ route('user.deposit') }}">Deposit <i class="fa fa-angle-right"></i></a></li>
               <li style="background: #a4c639;margin:10px;padding:15px;"><a href="{{ route('user.loan') }}">Loan Request <i class="fa fa-angle-right"></i></a></li>
               <li style="background: #a4c639;margin:10px;padding:15px;" ><a href="">Payment <i class="fa fa-angle-right"></i></a></li>
-              <li style="background: #a4c639;margin:10px;padding:15px;"><a href="{{ route('user.profile') }}">Profile <i class="fa fa-angle-right"></i></a></li>
+              <li style="background: #a4c639;margin:10px;padding:15px;"><a href="{{ route('user.profile',auth()->user()->id )}}">Profile <i class="fa fa-angle-right"></i></a></li>
+              <li style="background: #a4c639;margin:10px;padding:15px;" ><a href="{{ route('user.report') }}">Report <i class="fa fa-angle-right"></i></a></li>
+
             </ul>
           </div>
           <div class="col-md-9" style="margin-top:20px;">

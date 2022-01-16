@@ -1,3 +1,8 @@
+@extends('website.pages.service')
+@section('mehadi')
+  <article  style="margin-left:30px;">
+    <h4  style="text-align:center;">Member profile</h4>
+                 <br>
 <thead class= "table-dark">
       <tr>
           <th scope="col">#</th>
@@ -9,16 +14,15 @@
       </tr>
     </thead>
 <tbody>
+
     @foreach($list  as  $key=>$news)
-    $r={{$news->member_id}}
-     @if($r==1235)
-    <tr>
+    @if({{auth()->user()->id}}==1}})
 
   <td>{{ $news->member_id}}</td>
     <td>{{ $news->amount }}</td>
     <td> </td>
       </tr>
-     @endif
+      @endif
 
 
 
@@ -31,3 +35,4 @@
 </tbody>
   </table>
 </div>
+@endsection

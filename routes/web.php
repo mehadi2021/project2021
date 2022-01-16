@@ -153,7 +153,7 @@ Route::get('/service/loan request',[ServiceController::class,'loan'])->name('use
 Route::post('/service/loan request',[LoanRequestController::class,'loan_store'])->name('user.loan.store');
 
 
- Route::get('/service/profile',[ServiceController::class,'profile'])->name('user.profile');
+ Route::get('/service/profile/{id}',[ServiceController::class,'profile'])->name('user.profile');
 // Route::post('/service',[LoanRequestController::class,'loan_store'])->name('user.loan.store');
 Route::get('/report',[ReportController::class,'report'])->name('user.report');
 Route::get('/service/loan request',[New_loanController::class,'loan_request'])->name('user.loan');
